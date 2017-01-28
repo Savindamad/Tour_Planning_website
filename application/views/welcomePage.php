@@ -2,14 +2,14 @@
 <html>
     <head>
         <title>Home</title>
-        <link href="<?php echo base_url('public/css/bootstrap.css');?>" rel='stylesheet' type='text/css' />
-        <link href="<?php echo base_url('public/css/style.css');?>" rel='stylesheet' type='text/css' />
+        <link href="<?php echo base_url('public/css/bootstrap.css'); ?>" rel='stylesheet' type='text/css' />
+        <link href="<?php echo base_url('public/css/style.css'); ?>" rel='stylesheet' type='text/css' />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Lato:100,200,300,400,600,700,900' rel='stylesheet' type='text/css'>
-        <!----start-top-nav-script---->
+        <!----start-top-nav-script-->
         <script>
             $(function () {
                 var pull = $('#pull');
@@ -34,7 +34,7 @@
         <div class="header">
             <div class="container">
                 <div class="logo">
-                    <a href="index.html"><img src="images/logo.png" alt=""></a>
+                    <a href="<?php echo base_url(); ?>"><img style="width: 200px; margin-top: -30px; margin-bottom: -30px" src="<?php echo base_url('public/images/logo1.png'); ?>" alt=""></a>
                 </div>
                 <div class="menu">
                     <a class="toggleMenu" href="#"><img src="images/nav_icon.png" alt="" /> </a>
@@ -226,17 +226,17 @@
                     </div>
                 </div>
             </div>
-            <script src="<?php echo base_url('public/js/jquery.min.js');?>"></script>
+            <script src="<?php echo base_url('public/js/jquery.min.js'); ?>"></script>
+            <script type="text/javascript" src="<?php echo base_url('public/js/slide_image.js'); ?>"></script>
+            <script type="text/javascript" src="<?php echo base_url('public/js/responsive-nav.js'); ?>"></script>
+            <script type="text/javascript" src="<?php echo base_url('public/js/jquery.flexisel.js'); ?>"></script>
             <script type="text/javascript">
-            jQuery(document).ready(function ($) {
-                $(".scroll").click(function (event) {
-                    event.preventDefault();
-                    $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1200);
+                jQuery(document).ready(function ($) {
+                    $(".scroll").click(function (event) {
+                        event.preventDefault();
+                        $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1200);
+                    });
                 });
-            });
             </script>
-            <script type="text/javascript" src="<?php echo base_url('public/js/slide_image.js');?>"></script>
-            <script type="text/javascript" src="<?php echo base_url('public/js/responsive-nav.js');?>"></script>
-            <script type="text/javascript" src="<?php echo base_url('public/js/jquery.flexisel.js');?>"></script>
     </body>
 </html>		

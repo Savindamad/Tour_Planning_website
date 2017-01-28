@@ -15,7 +15,7 @@
     <div class="header">
         <div class="container">
             <div class="logo">
-                <a href="index.html"><img src="images/logo.png" alt=""></a>
+                <a href="<?php echo base_url();?>"><img style="width: 200px; margin-top: -30px; margin-bottom: -30px" src="<?php echo base_url('public/images/logo1.png');?>" alt=""></a>
             </div>
             <div class="menu">
                 <a class="toggleMenu" href="#"><img src="images/nav_icon.png" alt="" /> </a>
@@ -227,23 +227,15 @@
                         </form>
                     </div>
                     <div class="col-md-4">
-                        <form role="form">
-                            <div class="form-group">
-                                <label for="activities">
-                                    Select activities
-                                </label>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="">
-                                        Activity one
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="">
-                                        Activity one
-                                    </label>
-                                </div>
+                        <form>
+                            <label>
+                                Hotel
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <input type="checkbox" aria-label="...">
+                                </span>
+                                <input type="text" class="form-control" value="Activity 1" disabled>
                             </div>
                         </form>
                     </div>

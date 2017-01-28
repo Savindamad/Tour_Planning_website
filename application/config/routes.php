@@ -58,4 +58,4 @@ $route['Packages'] = 'PackagesController/index';
 $route['Place'] = 'PlaceController/index';
 $route['Places'] = 'PlacesController/index';
 $route['Activities'] = 'ActivitiesController/index';
-
+$route['Reviews'] = 'ReviewsController/index';
