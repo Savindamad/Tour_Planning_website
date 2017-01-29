@@ -97,6 +97,14 @@
                         </select>
                     </div>
                     <div class="form-group">
+                        <label for="room">
+                            Hotel
+                        </label>
+                        <select class="form-control" id="room">
+                            <option>Default select</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="numPersons">
                             Number of persons
                         </label>
