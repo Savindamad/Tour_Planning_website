@@ -13,7 +13,7 @@
         <div class="header">
             <div class="container">
                 <div class="logo">
-                    <a href="<?php echo base_url();?>"><img style="width: 200px; margin-top: -30px; margin-bottom: -30px" src="<?php echo base_url('public/images/logo1.png');?>" alt=""></a>
+                    <a href="<?php echo base_url(); ?>"><img style="width: 200px; margin-top: -30px; margin-bottom: -30px" src="<?php echo base_url('public/images/logo1.png'); ?>" alt=""></a>
                 </div>
                 <div class="menu">
                     <a class="toggleMenu" href="#"><img src="images/nav_icon.png" alt="" /> </a>
@@ -53,81 +53,35 @@
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="thumbnail">
-                                <img alt="Bootstrap Thumbnail First" src="http://lorempixel.com/output/people-q-c-600-200-1.jpg" />
-                                <div class="caption">
-                                    <h3>
-                                        Thumbnail label
-                                    </h3>
-                                    <p>
-                                        Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                                    </p>
-                                    <p>
-                                        <a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
-                                    </p>
+                        <?php
+                        foreach ($packages->result() as $row) {
+                            ?>
+                            <div class="col-md-4">
+                                <div class="thumbnail">
+                                    <div class="caption">
+                                        <h3><?php echo $row->name;?></h3>
+                                    </div>
+                                    <img alt="Bootstrap Thumbnail Second" src="<?php echo base_url($row->image);?>" />
+                                    <div class="caption">
+                                        <p><?php echo $row->description;?></p><br>
+                                        <p><a class="btn btn-primary" href="<?php echo base_url('Package/').$row->id;?>">View details</a></p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="thumbnail">
-                                <img alt="Bootstrap Thumbnail First" src="http://lorempixel.com/output/people-q-c-600-200-1.jpg" />
-                                <div class="caption">
-                                    <h3>
-                                        Thumbnail label
-                                    </h3>
-                                    <p>
-                                        Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                                    </p>
-                                    <p>
-                                        <a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="thumbnail">
-                                <img alt="Bootstrap Thumbnail Second" src="http://lorempixel.com/output/city-q-c-600-200-1.jpg" />
-                                <div class="caption">
-                                    <h3>
-                                        Thumbnail label
-                                    </h3>
-                                    <p>
-                                        Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                                    </p>
-                                    <p>
-                                        <a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="thumbnail">
-                                <img alt="Bootstrap Thumbnail Third" src="http://lorempixel.com/output/sports-q-c-600-200-1.jpg" />
-                                <div class="caption">
-                                    <h3>
-                                        Thumbnail label
-                                    </h3>
-                                    <p>
-                                        Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                                    </p>
-                                    <p>
-                                        <a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                            <?php
+                        }
+                        ?>
                     </div>
                 </div>
                 <div class="col-md-12">
-            </div>
-        </div>
-        <div class="footer">
-            <div class="footer_bottom">
-                <div class="copy">
-                    <p>&copy; 2014 Template by <a href="#" target="_blank">  w3layouts</a></p>
                 </div>
             </div>
-        </div>
+            <div class="footer">
+                <div class="footer_bottom">
+                    <div class="copy">
+                        <p>&copy; 2014 Template by <a href="#" target="_blank">  w3layouts</a></p>
+                    </div>
+                </div>
+            </div>
     </body>
 </html>		

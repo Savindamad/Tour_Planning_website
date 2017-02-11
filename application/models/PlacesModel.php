@@ -2,16 +2,39 @@
 
 class PlacesModel extends CI_Model {
 
-    public function getPackages() {
+    public function getAllMainPlaces() {
         $this->db->select('*');
-        $this->db->from('package_info');
+        $this->db->from('place');
+        $this->db->where('type', 'MAIN');
         $result = $this->db->get();
         return $result;
     }
 
-    public function getRandPackages() {
-        $result = $this->db->query("SELECT * FROM package_info ORDER BY RAND() LIMIT 0,3;");
+    public function getRandMainPlaces() {
+        $result = $this->db->query("SELECT * FROM place WHERE type = 'MAIN' ORDER BY RAND() LIMIT 0,8;");
         return $result;
+    }
+
+    public function getAllOtherPlaces() {
+        $this->db->select('*');
+        $this->db->from('place');
+        $this->db->where('type', 'OTHER');
+        $result = $this->db->get();
+        return $result;
+    }
+
+    public function getRandOtherPlaces() {
+        $result = $this->db->query("SELECT * FROM place WHERE type = 'OTHER' ORDER BY RAND() LIMIT 0,8;");
+        return $result;
+    }
+
+    public function getRandPlaces() {
+        $result = $this->db->query("SELECT * FROM place ORDER BY RAND() LIMIT 0,8;");
+        return $result;
+    }
+
+    public function searchPlace($name) {
+        
     }
 
 }
