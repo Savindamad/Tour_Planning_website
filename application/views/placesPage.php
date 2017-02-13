@@ -12,7 +12,7 @@
         <div class="header">
             <div class="container">
                 <div class="logo">
-                    <a href="<?php echo base_url();?>"><img style="width: 200px; margin-top: -30px; margin-bottom: -30px" src="<?php echo base_url('public/images/logo1.png');?>" alt=""></a>
+                    <a href="<?php echo base_url(); ?>"><img style="width: 200px; margin-top: -30px; margin-bottom: -30px" src="<?php echo base_url('public/images/logo1.png'); ?>" alt=""></a>
                 </div>
                 <div class="menu">
                     <a class="toggleMenu" href="#"><img src="images/nav_icon.png" alt="" /></a>
@@ -59,17 +59,49 @@
             <div class="row" style="margin-top: 40px">
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
+                    <div class="content_white" style="text-align: left">
+                        <h2>Most popular places in Sri Lanka</h2>
+                        <p>Description</p>
+                    </div>
                     <div class="row">
-                        <div class="col-md-3">
-                            <div class="thumbnail">
-                                <h3>Place name</h3>
-                                <img alt="Bootstrap Thumbnail First" src="http://lorempixel.com/output/people-q-c-600-200-1.jpg" />
-                                <div class="caption">
-                                    <p>Description</p>
-                                    <p style="margin-top: 5px"><a class="btn btn-primary" href="#">View more details</a></p>
+                        <?php
+                        foreach ($main_places->result() as $row) {
+                            ?>
+                            <div class="col-md-3">
+                                <div class="thumbnail">
+                                    <h3><?php echo $row->name; ?></h3>
+                                    <img alt="Bootstrap Thumbnail First" src="<?php echo base_url($row->image); ?>" />
+                                    <div class="caption">
+                                        <p><?php echo $row->description; ?></p>
+                                        <p style="margin-top: 5px"><a class="btn btn-primary" href="<?php echo base_url('Place/') . $row->id; ?>">View more details</a></p>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
+                            </div> 
+                            <?php
+                        }
+                        ?>
+                    </div>
+                    <div class="content_white" style="text-align: left">
+                        <h2>Other places in Sri Lanka</h2>
+                        <p>Description</p>
+                    </div>
+                    <div class="row">
+                        <?php
+                        foreach ($other_places->result() as $row) {
+                            ?>
+                            <div class="col-md-3">
+                                <div class="thumbnail">
+                                    <h3><?php echo $row->name; ?></h3>
+                                    <img alt="Bootstrap Thumbnail First" src="<?php echo base_url($row->image); ?>" />
+                                    <div class="caption">
+                                        <p><?php echo $row->description; ?></p>
+                                        <p style="margin-top: 5px"><a class="btn btn-primary" href="<?php echo base_url('Place/') . $row->id; ?>">View more details</a></p>
+                                    </div>
+                                </div>
+                            </div> 
+                            <?php
+                        }
+                        ?>
                     </div>
                 </div>
                 <div class="col-md-12">

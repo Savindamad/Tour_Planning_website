@@ -1,6 +1,6 @@
 <?php
 
-class packagesModel extends CI_Model {
+class PackagesModel extends CI_Model {
 
     public function getPackages() {
         $this->db->select('*');

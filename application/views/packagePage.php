@@ -15,7 +15,7 @@
     <div class="header">
         <div class="container">
             <div class="logo">
-                <a href="<?php echo base_url();?>"><img style="width: 200px; margin-top: -30px; margin-bottom: -30px" src="<?php echo base_url('public/images/logo1.png');?>" alt=""></a>
+                <a href="<?php echo base_url(); ?>"><img style="width: 200px; margin-top: -30px; margin-bottom: -30px" src="<?php echo base_url('public/images/logo1.png'); ?>" alt=""></a>
             </div>
             <div class="menu">
                 <a class="toggleMenu" href="#"><img src="images/nav_icon.png" alt="" /> </a>
@@ -50,206 +50,159 @@
             </section> 
         </div>
     </div>
-    <div class="container-fluid">
+
+    <div class="container-fluid" style="margin-top: 40px; margin-bottom: 20px;">
         <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-10">
-                <div class="jumbotron">
-                    <h2>Package Name</h2>
-                    <p>Package description</p>
+                <div class="content_white" style="text-align: left; margin-left: 5px">
+                    <h2>Name</h2>
+                    <p>description</p>
                 </div>
-            </div>
-            <div class="col-md-1"></div>
-        </div>
-        <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-5">
-                <div id="map_wrapper">
-                    <div id="map_canvas" class="mapping"></div>
-                </div>
-            </div>
-            <div class="col-md-5">
-                <form role="form">
-                    <div class="form-group">
-                        <label for="email">
-                            Email address
-                        </label>
-                        <input type="email" class="form-control" id="email" />
-                    </div>
-                    <div class="form-group">
-                        <label for="country">
-                            Country
-                        </label>
-                        <select class="form-control bfh-countries" data-country="US" id="country"></select>
-                    </div>
-                    <div class="form-group">
-                        <label for="mobile">
-                            Phone number
-                        </label>
-                        <input type="email" class="form-control" id="mobile" />
-                    </div>
-                    <div class="form-group">
-                        <label for="hotel">
-                            Hotel
-                        </label>
-                        <select class="form-control" id="hotel">
-                            <option>Default select</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="room">
-                            Hotel
-                        </label>
-                        <select class="form-control" id="room">
-                            <option>Default select</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="numPersons">
-                            Number of persons
-                        </label>
-                        <input type="number" class="form-control" id="numPersons" />
-                    </div>
-                    <div class="form-group">
-                        <label for="double">
-                            Number of double rooms
-                        </label>
-                        <select class="form-control" id="double">
-                            <option>Default select</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="single">
-                            Number of single rooms
-                        </label>
-                        <select class="form-control" id="single">
-                            <option>Default select</option>
-                        </select>
-                    </div>
-                </form>
             </div>
         </div>
-        <div class="row" style="margin-top: 20px">
-            <div class="col-md-1"></div>
-            <div class="col-md-10" style="background: #F6F6F6; border-radius: 5px">
-                <div class="row" style="margin-top: 20px">
-                    <div class="col-md-4"><h3>Day 01</h3></div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="thumbnail">
-                                    <img alt="Bootstrap Thumbnail First" src="http://lorempixel.com/output/people-q-c-600-200-1.jpg" />
-                                    <div class="caption">
-                                        <h4>Place</h4>
-                                        <p><small>Place description</small></p>
+        <div class="col-md-1"></div>
+        <div class="col-md-10" style="background-color: #f6f6f6; border-radius: 5px;">
+            <div class="row" style="margin-top: 30px;">      
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-11">
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <label for="email">
+                                                Email address
+                                            </label>
+                                            <input type="email" class="form-control" id="email" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="country">
+                                                Country
+                                            </label>
+                                            <select class="form-control bfh-countries" data-country="US" id="country"></select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="mobile">
+                                                Phone number
+                                            </label>
+                                            <input type="email" class="form-control" id="mobile" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="hotel">
+                                                Hotel
+                                            </label>
+                                            <select class="form-control" id="hotel">
+                                                <option>Default select</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="room">
+                                                Hotel
+                                            </label>
+                                            <select class="form-control" id="room">
+                                                <option>Default select</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="numPersons">
+                                                Number of persons
+                                            </label>
+                                            <input type="number" class="form-control" id="numPersons" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="double">
+                                                Number of double rooms
+                                            </label>
+                                            <select class="form-control" id="double">
+                                                <option>Default select</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="single">
+                                                Number of single rooms
+                                            </label>
+                                            <select class="form-control" id="single">
+                                                <option>Default select</option>
+                                            </select>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-10">
+                                    <div class="thumbnail">
+                                        <div class="map">
+                                            <iframe width="600" frameborder="0" style="border:1" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJXcyB0pFP4joRTufgPM0vS-o&key=AIzaSyCWUG3LJ6Pa8Zr551qR_usacBfn_NWA_xU" allowfullscreen>
+                                            </iframe><br>
+                                            <small><a href="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265" style="color:#666;text-align:left;font-size:12px"></a></small>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <form role="form">
-                            <div class="form-group">
-                                <label for="single">
-                                    Hotel
-                                </label>
-                                <select class="form-control" id="single">
-                                    <option>Default select</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="single">
-                                    Select hotel
-                                </label>
-                                <select class="form-control" id="single">
-                                    <option>Default select</option>
-                                </select>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-md-4">
-                        <form role="form">
-                            <div class="form-group">
-                                <label for="activities">
-                                    Select activities
-                                </label>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="">
-                                        Activity one
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="">
-                                        Activity one
-                                    </label>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
                 </div>
             </div>
-            <div class="col-md-1"></div>
-        </div>
-        <div class="row" style="margin-top: 20px">
-            <div class="col-md-1"></div>
-            <div class="col-md-10" style="background: #F6F6F6; border-radius: 5px">
-                <div class="row" style="margin-top: 20px">
-                    <div class="col-md-4"><h3>Day 01</h3></div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="thumbnail">
-                                    <img alt="Bootstrap Thumbnail First" src="http://lorempixel.com/output/people-q-c-600-200-1.jpg" />
-                                    <div class="caption">
-                                        <h4>Place</h4>
-                                        <p><small>Place description</small></p>
+            <div class="row" style="margin: 5px; margin-bottom: 30px;">
+                <div class="col-md-12" style="background: #ffffff; border-radius: 5px">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row" style="margin-top: 20px">
+                                <div class="col-md-4"><h3>Day 01 - Place Name</h3></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="thumbnail">
+                                                <img alt="Bootstrap Thumbnail First" src="http://lorempixel.com/output/people-q-c-600-200-1.jpg" />
+                                                <div class="caption">
+                                                    <p style="margin-top: 5px"><a class="btn btn-primary" href="#">View more details</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                                <div class="col-md-4">
+                                    <h3>Activities</h3>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">New</li>
+                                        <li class="list-group-item">Deleted</li> 
+                                        <li class="list-group-item">Warnings</li> 
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <h3>Hotel details</h3>
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <label for="single">
+                                                Hotel
+                                            </label>
+                                            <select class="form-control" id="single">
+                                                <option>Two Star</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="single">
+                                                Select hotel
+                                            </label>
+                                            <select class="form-control" id="single">
+                                                <option>Default select</option>
+                                            </select>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div> 
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <form role="form">
-                            <div class="form-group">
-                                <label for="single">
-                                    Hotel
-                                </label>
-                                <select class="form-control" id="single">
-                                    <option>Default select</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="single">
-                                    Select hotel
-                                </label>
-                                <select class="form-control" id="single">
-                                    <option>Default select</option>
-                                </select>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-md-4">
-                        <form>
-                            <label>
-                                Hotel
-                            </label>
-                            <div class="input-group">
-                                <span class="input-group-addon">
-                                    <input type="checkbox" aria-label="...">
-                                </span>
-                                <input type="text" class="form-control" value="Activity 1" disabled>
-                            </div>
-                        </form>
-                    </div>
+
                 </div>
             </div>
-            <div class="col-md-1"></div>
         </div>
     </div>
     <div class="row" style="margin-top: 20px; margin-bottom: 30px;">

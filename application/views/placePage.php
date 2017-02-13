@@ -12,7 +12,7 @@
         <div class="header">
             <div class="container">
                 <div class="logo">
-                    <a href="<?php echo base_url();?>"><img style="width: 200px; margin-top: -30px; margin-bottom: -30px" src="<?php echo base_url('public/images/logo1.png');?>" alt=""></a>
+                    <a href="<?php echo base_url(); ?>"><img style="width: 200px; margin-top: -30px; margin-bottom: -30px" src="<?php echo base_url('public/images/logo1.png'); ?>" alt=""></a>
                 </div>
                 <div class="menu">
                     <a class="toggleMenu" href="#"><img src="images/nav_icon.png" alt="" /></a>
@@ -55,28 +55,15 @@
                             <div class="col-md-6">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div class="thumbnail">
-                                            <h3 style="margin-top: 10px; margin-left: 5px">Place</h3>
+                                        <div class="content_white" style="text-align: left; margin-top: -50px; margin-bottom: -50px; margin-left: 5px">
+                                            <h2><?php echo $place_info->name; ?></h2>
                                         </div>
                                         <div class="thumbnail">
-                                            <img alt="Bootstrap Thumbnail Third" src="http://lorempixel.com/output/sports-q-c-600-200-1.jpg" />
+                                            <img alt="Bootstrap Thumbnail Third" src="<?php echo base_url($place_info->image); ?>" />
                                         </div>
                                         <div class="thumbnail" style="margin-top: -10px">
                                             <div class="caption">
-                                                <p>
-                                                    Cras justo odio, dapibus ac facilisis in, 
-                                                    egestas eget quam. Donec id elit non mi porta gravida at 
-                                                    eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                                                    Cras justo odio, dapibus ac facilisis in, 
-                                                    egestas eget quam. Donec id elit non mi porta gravida at 
-                                                    eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                                                    Cras justo odio, dapibus ac facilisis in, 
-                                                    egestas eget quam. Donec id elit non mi porta gravida at 
-                                                    eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                                                    Cras justo odio, dapibus ac facilisis in, 
-                                                    egestas eget quam. Donec id elit non mi porta gravida at 
-                                                    eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                                                </p>
+                                                <p><?php echo $place_info->description; ?></p>
                                             </div>
                                         </div>
                                     </div>
@@ -95,68 +82,83 @@
                     </div>
                 </div>
                 <div class="row" style="margin: 5px; margin-bottom: 30px;">
-                    <div class="col-md-12" style="background-color: white; border-radius: 5px;">
+                    <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="row" style="margin-top: 10px">
                                     <div class="col-md-12">
-                                        <h2>Activities</h2>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="row">
-                                            <div class="col-md-4" style="border: 1px">
-                                                <div class="thumbnail">
-                                                    <img alt="Bootstrap Thumbnail First" src="http://lorempixel.com/output/people-q-c-600-200-1.jpg" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <div class="thumbnail">
-                                                    <div class="caption">
-                                                        <h4>Place 1</h4>
-                                                        <p>
-                                                            <small>
-                                                                Cras justo odio, dapibus ac facilisis in, 
-                                                                egestas eget quam. Donec id elit non mi porta gravida.
-                                                            </small>
-                                                        </p>
+                                        <div class="content_white" style="text-align: left; margin-top: -50px; margin-bottom: -50px; margin-left: 5px">
+                                            <h2>Activities</h2>
+                                        </div>
+                                        <?php
+                                        foreach ($activities->result() as $row) {
+                                            ?>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-4" style="border: 1px">
+                                                            <div class="thumbnail">
+                                                                <img alt="Bootstrap Thumbnail First" src="<?php echo base_url($row->image); ?>" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-8">
+                                                            <div class="thumbnail">
+                                                                <div class="caption">
+                                                                    <h4><?php echo $row->name; ?></h4>
+                                                                    <p><small><?php echo $row->description; ?></small></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-
-                                        </div>
+                                            <?php
+                                        }
+                                        ?>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="row" style="margin-top: 10px">
                                     <div class="col-md-12">
-                                        <h2>Hotels</h2>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="row">
-                                            <div class="col-md-4" style="border: 1px">
-                                                <div class="thumbnail">
-                                                    <img alt="Bootstrap Thumbnail First" src="http://lorempixel.com/output/people-q-c-600-200-1.jpg" />
-                                                </div>
+                                        <div class="content_white" style="text-align: left; margin-top: -50px; margin-bottom: -50px; margin-left: 5px">
+                                            <h2>Hotels</h2>
+                                        </div>
+                                        <form role="form">                                          
+                                            <div class="form-group">
+                                                <select class="form-control" id="hotel">
+                                                    <option>Two Star</option>
+                                                    <option>Three Star</option>
+                                                    <option>Four Star</option>
+                                                    <option>Five Star</option>
+                                                </select>
                                             </div>
-                                            <div class="col-md-8">
-                                                <div class="thumbnail">
-                                                    <div class="caption">
-                                                        <h4>Thumbnail label</h4>
-                                                        <p>
-                                                            <small>
-                                                                Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                                                            </small>
-                                                        </p>
+                                        </form>
+                                        <?php
+                                        foreach ($two_star_hotels->result() as $row) {
+                                            ?>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="col-md-4" style="border: 1px">
+                                                            <div class="thumbnail">
+                                                                <img alt="Bootstrap Thumbnail First" src="<?php echo base_url($row->image); ?>" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-8">
+                                                            <div class="thumbnail">
+                                                                <div class="caption">
+                                                                    <h4><?php echo $row->name; ?></h4>
+                                                                    <p><small><?php echo $row->description; ?></small></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-
-                                        </div>
+                                            <?php
+                                        }
+                                        ?>
                                     </div>
                                 </div>
                             </div>

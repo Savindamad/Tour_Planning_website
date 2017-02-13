@@ -6,17 +6,17 @@ class PackageController extends CI_Controller {
         $this->load->model('PackageModel');
         $data["packageInfo"] = $this->PackageModel->getPackage($param);
         $places = $this->PackageModel->getPlaces($param);
-        $allHotels = array();
-        $allActivities = array();
+        $placeInfo = array();
         foreach ($places->result() as $row){
+            $placeInfoTemp = array();
             $hotels = $this->PackageModel->getHotels($row->place_id);
             $activities = $this->PackageModel->getActivities($row->place_id);
-            $allHotels[] = $hotels;
-            $allActivities[] = $activities;
+            $placeInfoTemp["place"] = $row;
+            $placeInfoTemp["hotels"] = $hotels;
+            $placeInfoTemp["activities"] = $activities;
+            $placeInfo[] = $placeInfoTemp;
         }
-        $data["places"] = $places;
-        $data["hotels"] = $allHotels;
-        $data["activities"] = $allActivities;
+        $data["places"] = $placeInfo;
         $this->load->view('packagePage',$data);
     }
 }

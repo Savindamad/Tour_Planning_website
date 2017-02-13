@@ -11,7 +11,7 @@ class PlacesModel extends CI_Model {
     }
 
     public function getRandMainPlaces() {
-        $result = $this->db->query("SELECT * FROM place WHERE type = 'MAIN' ORDER BY RAND() LIMIT 0,8;");
+        $result = $this->db->query("SELECT * FROM place WHERE type = 'MAIN' ORDER BY RAND() LIMIT 0,4;");
         return $result;
     }
 
