@@ -56,8 +56,8 @@
             <div class="col-md-1"></div>
             <div class="col-md-10">
                 <div class="content_white" style="text-align: left; margin-left: 5px">
-                    <h2>Name</h2>
-                    <p>description</p>
+                    <h2><?php echo $package->name; ?></h2>
+                    <p><?php echo $package->description; ?></p>
                 </div>
             </div>
         </div>
@@ -94,15 +94,20 @@
                                                 Hotel
                                             </label>
                                             <select class="form-control" id="hotel">
-                                                <option>Default select</option>
+                                                <option>Two star</option>
+                                                <option>Three star</option>
+                                                <option>Four star</option>
+                                                <option>Five star</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="room">
-                                                Hotel
+                                                Room condition
                                             </label>
                                             <select class="form-control" id="room">
-                                                <option>Default select</option>
+                                                <option>Standard rooms</option>
+                                                <option>Delux rooms</option>
+                                                <option>Sweet rooms</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
@@ -112,20 +117,22 @@
                                             <input type="number" class="form-control" id="numPersons" />
                                         </div>
                                         <div class="form-group">
-                                            <label for="double">
-                                                Number of double rooms
-                                            </label>
-                                            <select class="form-control" id="double">
-                                                <option>Default select</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
                                             <label for="single">
                                                 Number of single rooms
                                             </label>
-                                            <select class="form-control" id="single">
-                                                <option>Default select</option>
-                                            </select>
+                                            <input type="number" class="form-control" id="single" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="double">
+                                                Number of double rooms
+                                            </label>
+                                            <input type="number" class="form-control" id="double" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="triple">
+                                                Number of triple rooms
+                                            </label>
+                                            <input type="number" class="form-control" id="triple" />
                                         </div>
                                     </form>
                                 </div>
@@ -148,72 +155,89 @@
                     </div>
                 </div>
             </div>
-            <div class="row" style="margin: 5px; margin-bottom: 30px;">
-                <div class="col-md-12" style="background: #ffffff; border-radius: 5px">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="row" style="margin-top: 20px">
-                                <div class="col-md-4"><h3>Day 01 - Place Name</h3></div>
-                            </div>
+            <div>
+                <?php
+                foreach ($places as $placeInfo) {
+                    ?>
+                    <div class="row" style="margin: 5px; margin-bottom: 30px;">
+                        <div class="col-md-12" style="background: #ffffff; border-radius: 5px">
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-md-12">
+                                    <div class="row" style="margin-top: 20px">
+                                        <div class="col-md-4"><h3>Day <?php echo $placeInfo['place']->day_num; ?> - <?php echo $placeInfo['place']->place_name; ?></h3></div>
+                                    </div>
                                     <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="thumbnail">
-                                                <img alt="Bootstrap Thumbnail First" src="http://lorempixel.com/output/people-q-c-600-200-1.jpg" />
-                                                <div class="caption">
-                                                    <p style="margin-top: 5px"><a class="btn btn-primary" href="#">View more details</a></p>
+                                        <div class="col-md-4">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="thumbnail">
+                                                        <img alt="Bootstrap Thumbnail First" src="<?php echo $placeInfo['place']->place_image; ?>" />
+                                                        <div class="caption">
+                                                            <p style="margin-top: 5px"><a class="btn btn-primary" href="#">View more details</a></p>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <h3>Activities</h3>
-                                    <ul class="list-group">
-                                        <li class="list-group-item">New</li>
-                                        <li class="list-group-item">Deleted</li> 
-                                        <li class="list-group-item">Warnings</li> 
-                                    </ul>
-                                </div>
-                                <div class="col-md-4">
-                                    <h3>Hotel details</h3>
-                                    <form role="form">
-                                        <div class="form-group">
-                                            <label for="single">
-                                                Hotel
-                                            </label>
-                                            <select class="form-control" id="single">
-                                                <option>Two Star</option>
-                                            </select>
+                                        <div class="col-md-4">
+                                            <h3>Activities</h3>
+                                            <ul class="list-group">
+                                                <?php
+                                                foreach ($placeInfo['activities']->result() as $row) {
+                                                    ?>
+                                                    <li class="list-group-item"><?php echo $row->activity_name; ?></li>
+                                                    <?php
+                                                }
+                                                ?>
+                                            </ul>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="single">
-                                                Select hotel
-                                            </label>
-                                            <select class="form-control" id="single">
-                                                <option>Default select</option>
-                                            </select>
+                                        <div class="col-md-4">
+                                            <h3>Hotel details</h3>
+                                            <form role="form">
+                                                <div class="form-group">
+                                                    <label for="single">
+                                                        Hotel
+                                                    </label>
+                                                    <select class="form-control" id="single">
+                                                        <option>Two Star</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="single">
+                                                        Select hotel
+                                                    </label>
+                                                    <select class="form-control" id="single">
+                                                        <?php
+                                                        foreach ($placeInfo['hotels']->result() as $row) {
+                                                            ?>
+                                                            <option><?php echo $row->hotel_name; ?></option>
+                                                            <?php
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </form>
                                         </div>
-                                    </form>
+                                    </div> 
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                     </div>
-
+                    <?php
+                }
+                ?>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px; margin-bottom: 30px;">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="jumbotron">
+                    <p>Package description</p>
+                    <button class="btn btn-lg btn-primary">Submit your response</button>
                 </div>
             </div>
+            <div class="col-md-1"></div>
         </div>
-    </div>
-    <div class="row" style="margin-top: 20px; margin-bottom: 30px;">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-            <div class="jumbotron">
-                <p>Package description</p>
-                <button class="btn btn-lg btn-primary">Submit your response</button>
-            </div>
-        </div>
-        <div class="col-md-1"></div>
     </div>
     <div class="footer">
         <div class="footer_bottom">

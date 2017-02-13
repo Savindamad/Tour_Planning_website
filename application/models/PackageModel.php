@@ -7,7 +7,7 @@ class PackageModel extends CI_Model {
         $this->db->from('package_info');
         $this->db->where('id', $packageId);
         $result = $this->db->get();
-        return $result;
+        return $result->row();
     }
     public function getPlaces($packageId){
         $this->db->select('*');
@@ -26,7 +26,7 @@ class PackageModel extends CI_Model {
     public function getActivities($placeId){
         $this->db->select('*');
         $this->db->from('place_activity_info');
-        $this->db->where('package_id', $placeId);
+        $this->db->where('place_id', $placeId);
         $result = $this->db->get();
         return $result;
     }

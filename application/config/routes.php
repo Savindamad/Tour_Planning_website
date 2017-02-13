@@ -53,7 +53,7 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['Package/(:num)'] = 'PackageController/index/$x';
+$route['Package/(:num)'] = 'PackageController/index/$1';
 $route['Packages'] = 'PackagesController/index';
 $route['Place/(:num)'] = 'PlaceController/index/$1';
 $route['Places'] = 'PlacesController/index';
