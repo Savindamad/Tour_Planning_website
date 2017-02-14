@@ -39,17 +39,17 @@
                 <div class="menu">
                     <a class="toggleMenu" href="#"><img src="images/nav_icon.png" alt="" /> </a>
                     <ul class="nav" id="nav">
-                        <li class="current"><a href="<?php echo base_url();?>">Home</a></li>
+                        <li class="current"><a href="<?php echo base_url(); ?>">Home</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plan your tour<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="<?php echo base_url('Packages');?>">Our packages</a></li>
-                                <li><a href="<?php echo base_url('Places');?>">Plan package</a></li>
-                                <li><a href="<?php echo base_url('Places');?>">Get tour guide</a></li>
+                                <li><a href="<?php echo base_url('Packages'); ?>">Our packages</a></li>
+                                <li><a href="<?php echo base_url('Places'); ?>">Plan package</a></li>
+                                <li><a href="<?php echo base_url('Places'); ?>">Get tour guide</a></li>
                             </ul>
                         </li>
-                        <li><a href="<?php echo base_url('Places');?>">Places to visit</a></li>
-                        <li><a href="<?php echo base_url('Reviews');?>">Reviews</a></li>
+                        <li><a href="<?php echo base_url('Places'); ?>">Places to visit</a></li>
+                        <li><a href="<?php echo base_url('Reviews'); ?>">Reviews</a></li>
                         <div class="clear"></div>
                     </ul>
 
@@ -82,21 +82,27 @@
                 <div class="row" style="margin-top: -50px">
                     <div class="col-md-12">
                         <div class="row">
-                            <div class="col-md-4">
-                                <div class="thumbnail">
-                                    <img alt="Bootstrap Thumbnail First" src="http://lorempixel.com/output/people-q-c-600-200-1.jpg" />
-                                    <div class="caption">
-                                        <h3>Package name</h3>
-                                        <p style="text-align: justify; margin-bottom: 10px;">Package description</p>
-                                        <p><a class="btn btn-primary" style="background: #D65724" href="#">View more details</a></p>
+                            <?php
+                            foreach ($packages->result() as $row) {
+                                ?>
+                                <div class="col-md-4">
+                                    <div class="thumbnail">
+                                        <img alt="Bootstrap Thumbnail First" src="<?php echo base_url($row->image); ?>" />
+                                        <div class="caption">
+                                            <h3><?php echo $row->name; ?></h3>
+                                            <p style="text-align: justify; margin-bottom: 10px;"><?php echo $row->description; ?></p>
+                                            <p><a class="btn btn-primary" style="background: #D65724" href="<?php echo base_url('Package/').$row->id;?>">View more details</a></p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                                <?php
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
                 <div style="margin-top: 40px;">
-                    <a href="#" class="about_btn">View more packages</a>
+                    <a href="<?php echo base_url('Packages'); ?>" class="about_btn">View more packages</a>
                 </div>
             </div>
             <div class="content_white">
@@ -107,19 +113,25 @@
                 <div class="testmonial" style="margin-bottom: -100px"> 
                 </div>
                 <ul id="flexiselDemo1">
-                    <li>
-                        <div class="thumbnail" style="text-align: left;">
-                            <img alt="Bootstrap Thumbnail First" src="http://lorempixel.com/output/people-q-c-600-200-1.jpg" />
-                            <div class="caption">
-                                <h3>Package name</h3>
-                                <p style="text-align: justify; margin-bottom: 10px;"><small>Package description vgvchvc kjbjkbC CNC KBKJC HBBJC JBKJBKC KBKJBKA</small></p>
-                                <a class="btn btn-primary" style="background: #D65724" href="#">View more details</a>
+                    <?php
+                    foreach ($places->result() as $row) {
+                        ?>
+                        <li>
+                            <div class="thumbnail" style="text-align: left;">
+                                <img alt="Bootstrap Thumbnail First" src="<?php echo base_url($row->image)?>" />
+                                <div class="caption">
+                                    <h3><?php echo $row->name; ?></h3>
+                                    <p style="text-align: justify; margin-bottom: 10px;"><small><?php echo $row->description; ?></small></p>
+                                    <a class="btn btn-primary" style="background: #D65724" href="<?php echo base_url('Place/').$row->id;?>">View more details</a>
+                                </div>
                             </div>
-                        </div>
-                    </li>
+                        </li>
+                        <?php
+                    }
+                    ?>
                 </ul>
                 <div style="margin-top: -20px; margin-bottom: 40px;">
-                    <a href="#" class="about_btn">View more places</a>
+                    <a href="<?php echo base_url('Places');?>" class="about_btn">View more places</a>
                 </div>
             </div>
             <div class="content_white" style="margin-top: -50px">
@@ -130,19 +142,23 @@
                 <div class="testmonial" style="margin-bottom: -100px"> 
                 </div>
                 <ul id="flexiselDemo2">
-                    <li>
-                        <div class="thumbnail" style="text-align: left;">
-                            <img alt="Bootstrap Thumbnail First" src="http://lorempixel.com/output/people-q-c-600-200-1.jpg" />
-                            <div class="caption">
-                                <h3>Package name</h3>
-                                <p style="text-align: justify; margin-bottom: 10px;"><small>Package description vgvchvc kjbjkbC CNC KBKJC HBBJC JBKJBKC KBKJBKA</small></p>
-                                <a class="btn btn-primary" style="background: #D65724" href="#">View more details</a>
+                    <?php
+                    foreach ($activities->result() as $row) {
+                        ?>
+                        <li>
+                            <div class="thumbnail" style="text-align: left;">
+                                <img alt="Bootstrap Thumbnail First" src="<?php echo base_url($row->image)?>" />
+                                <div class="caption">
+                                    <h3><?php echo $row->name; ?></h3>
+                                    <p style="text-align: justify; margin-bottom: 10px;"><small><?php echo $row->description; ?></small></p>
+                                </div>
                             </div>
-                        </div>
-                    </li>
+                        </li>
+                        <?php
+                    }
+                    ?>
                 </ul>
                 <div style="margin-top: -20px; margin-bottom: 40px;">
-                    <a href="#" class="about_btn">View more activities</a>
                 </div>
             </div>
             <div class="footer">
@@ -231,12 +247,12 @@
             <script type="text/javascript" src="<?php echo base_url('public/js/responsive-nav.js'); ?>"></script>
             <script type="text/javascript" src="<?php echo base_url('public/js/jquery.flexisel.js'); ?>"></script>
             <script type="text/javascript">
-                jQuery(document).ready(function ($) {
-                    $(".scroll").click(function (event) {
-                        event.preventDefault();
-                        $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1200);
-                    });
+            jQuery(document).ready(function ($) {
+                $(".scroll").click(function (event) {
+                    event.preventDefault();
+                    $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1200);
                 });
+            });
             </script>
     </body>
 </html>		
