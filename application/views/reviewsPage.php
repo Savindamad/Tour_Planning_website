@@ -18,17 +18,17 @@
                 <div class="menu">
                     <a class="toggleMenu" href="#"><img src="images/nav_icon.png" alt="" /></a>
                     <ul class="nav" id="nav">
-                        <li><a href="#">Home</a></li>
+                        <li><a href="<?php echo base_url();?>">Home</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plan your tour<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Our packages</a></li>
-                                <li><a href="#">Plan package</a></li>
-                                <li><a href="#">Get tour guide</a></li>
+                                <li><a href="<?php echo base_url('Packages');?>">Our packages</a></li>
+                                <li><a href="<?php echo base_url('Places');?>">Plan package</a></li>
+                                <li><a href="<?php echo base_url('Places');?>">Get tour guide</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Places to visit</a></li>
-                        <li class="current"><a href="#">Reviews</a></li>
+                        <li><a href="<?php echo base_url('Places');?>">Places to visit</a></li>
+                        <li class="current"><a href="<?php echo base_url('Reviews');?>">Reviews</a></li>
                         <div class="clear"></div>
                     </ul>
 
