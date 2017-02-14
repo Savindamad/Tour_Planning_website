@@ -9,25 +9,6 @@
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Lato:100,200,300,400,600,700,900' rel='stylesheet' type='text/css'>
-        <!----start-top-nav-script-->
-        <script>
-            $(function () {
-                var pull = $('#pull');
-                menu = $('nav ul');
-                menuHeight = menu.height();
-                $(pull).on('click', function (e) {
-                    e.preventDefault();
-                    menu.slideToggle();
-                });
-                $(window).resize(function () {
-                    var w = $(window).width();
-                    if (w > 320 && menu.is(':hidden')) {
-                        menu.removeAttr('style');
-                    }
-                });
-            });
-        </script>
-        <!----//End-top-nav-script---->
     </head>
     <body>
         <!----start-header---->
@@ -63,9 +44,8 @@
         <div class="banner text-center">
             <div class="container">
                 <div class="banner-info">
-                    <h1>Name</h1>
+                    <h1>Walk Lanka Travels</h1>
                     <p>Description</p>
-                    <label class="page-scroll"><a class="banner-btn class scroll" href="#feature"><span> </span></a></label>
                 </div>
             </div>
         </div>
@@ -91,7 +71,7 @@
                                         <div class="caption">
                                             <h3><?php echo $row->name; ?></h3>
                                             <p style="text-align: justify; margin-bottom: 10px;"><?php echo $row->description; ?></p>
-                                            <p><a class="btn btn-primary" style="background: #D65724" href="<?php echo base_url('Package/').$row->id;?>">View more details</a></p>
+                                            <p><a class="btn btn-primary" style="background: #D65724" href="<?php echo base_url('Package/') . $row->id; ?>">View more details</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -118,11 +98,11 @@
                         ?>
                         <li>
                             <div class="thumbnail" style="text-align: left;">
-                                <img alt="Bootstrap Thumbnail First" src="<?php echo base_url($row->image)?>" />
+                                <img alt="Bootstrap Thumbnail First" src="<?php echo base_url($row->image) ?>" />
                                 <div class="caption">
                                     <h3><?php echo $row->name; ?></h3>
                                     <p style="text-align: justify; margin-bottom: 10px;"><small><?php echo $row->description; ?></small></p>
-                                    <a class="btn btn-primary" style="background: #D65724" href="<?php echo base_url('Place/').$row->id;?>">View more details</a>
+                                    <a class="btn btn-primary" style="background: #D65724" href="<?php echo base_url('Place/') . $row->id; ?>">View more details</a>
                                 </div>
                             </div>
                         </li>
@@ -131,7 +111,7 @@
                     ?>
                 </ul>
                 <div style="margin-top: -20px; margin-bottom: 40px;">
-                    <a href="<?php echo base_url('Places');?>" class="about_btn">View more places</a>
+                    <a href="<?php echo base_url('Places'); ?>" class="about_btn">View more places</a>
                 </div>
             </div>
             <div class="content_white" style="margin-top: -50px">
@@ -147,7 +127,7 @@
                         ?>
                         <li>
                             <div class="thumbnail" style="text-align: left;">
-                                <img alt="Bootstrap Thumbnail First" src="<?php echo base_url($row->image)?>" />
+                                <img alt="Bootstrap Thumbnail First" src="<?php echo base_url($row->image) ?>" />
                                 <div class="caption">
                                     <h3><?php echo $row->name; ?></h3>
                                     <p style="text-align: justify; margin-bottom: 10px;"><small><?php echo $row->description; ?></small></p>
@@ -246,13 +226,30 @@
             <script type="text/javascript" src="<?php echo base_url('public/js/slide_image.js'); ?>"></script>
             <script type="text/javascript" src="<?php echo base_url('public/js/responsive-nav.js'); ?>"></script>
             <script type="text/javascript" src="<?php echo base_url('public/js/jquery.flexisel.js'); ?>"></script>
-            <script type="text/javascript">
-            jQuery(document).ready(function ($) {
-                $(".scroll").click(function (event) {
-                    event.preventDefault();
-                    $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1200);
+            <script>
+                $(function () {
+                    var pull = $('#pull');
+                    menu = $('nav ul');
+                    menuHeight = menu.height();
+                    $(pull).on('click', function (e) {
+                        e.preventDefault();
+                        menu.slideToggle();
+                    });
+                    $(window).resize(function () {
+                        var w = $(window).width();
+                        if (w > 320 && menu.is(':hidden')) {
+                            menu.removeAttr('style');
+                        }
+                    });
                 });
-            });
+            </script>
+            <script type="text/javascript">
+                jQuery(document).ready(function ($) {
+                    $(".scroll").click(function (event) {
+                        event.preventDefault();
+                        $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1200);
+                    });
+                });
             </script>
     </body>
 </html>		

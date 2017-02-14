@@ -93,11 +93,11 @@
                                             <label for="hotel">
                                                 Hotel
                                             </label>
-                                            <select class="form-control" id="hotel">
-                                                <option>Two star</option>
-                                                <option>Three star</option>
-                                                <option>Four star</option>
-                                                <option>Five star</option>
+                                            <select class="form-control" id="hotel" onchange="getHotels(<?php echo $package->id;?>,this.value)">
+                                                <option value="TWO">Two star</option>
+                                                <option value="THREE">Three star</option>
+                                                <option value="FOUR">Four star</option>
+                                                <option value="FIVE">Five star</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
@@ -246,6 +246,7 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="http://localhost/TourPlanning/public/js/map.js"></script>
+    <script type="text/javascript" src="<?php echo base_url('public/js/map.js');?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('public/js/hotelInfo.js');?>"></script>
 </body>
 </html>		
