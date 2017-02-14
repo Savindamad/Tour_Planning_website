@@ -33,8 +33,11 @@ class PlacesModel extends CI_Model {
         return $result;
     }
 
-    public function searchPlace($name) {
-        
+    public function searchPlaces($name) {
+        $this->db->select('*');
+        $this->db->from('place');
+        $this->db->like('name', $name);
+        $result = $this->db->get();
+        return $result;
     }
-
 }

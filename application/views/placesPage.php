@@ -47,7 +47,7 @@
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search pla ">
+                                <input type="text" class="form-control" placeholder="Search places.." oninput="searchPlace(this.value)">
                             </div>
                         </div>
                     </div>
@@ -56,64 +56,68 @@
             </div>
         </div>
         <div class="container-fluid">
-            <div class="row" style="margin-top: 40px">
-                <div class="col-md-1"></div>
-                <div class="col-md-10">
-                    <div class="content_white" style="text-align: left">
-                        <h2>Most popular places in Sri Lanka</h2>
-                        <p>Description</p>
-                    </div>
-                    <div class="row">
-                        <?php
-                        foreach ($main_places->result() as $row) {
-                            ?>
-                            <div class="col-md-3">
-                                <div class="thumbnail">
-                                    <h3><?php echo $row->name; ?></h3>
-                                    <img alt="Bootstrap Thumbnail First" src="<?php echo base_url($row->image); ?>" />
-                                    <div class="caption">
-                                        <p><?php echo $row->description; ?></p>
-                                        <p style="margin-top: 5px"><a class="btn btn-primary" href="<?php echo base_url('Place/') . $row->id; ?>">View more details</a></p>
-                                    </div>
-                                </div>
-                            </div> 
+            <div id="placeResult">
+                <div class="row" style="margin-top: 40px">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <div class="content_white" style="text-align: left">
+                            <h2>Most popular places in Sri Lanka</h2>
+                            <p>Description</p>
+                        </div>
+                        <div class="row">
                             <?php
-                        }
-                        ?>
-                    </div>
-                    <div class="content_white" style="text-align: left">
-                        <h2>Other places in Sri Lanka</h2>
-                        <p>Description</p>
-                    </div>
-                    <div class="row">
-                        <?php
-                        foreach ($other_places->result() as $row) {
-                            ?>
-                            <div class="col-md-3">
-                                <div class="thumbnail">
-                                    <h3><?php echo $row->name; ?></h3>
-                                    <img alt="Bootstrap Thumbnail First" src="<?php echo base_url($row->image); ?>" />
-                                    <div class="caption">
-                                        <p><?php echo $row->description; ?></p>
-                                        <p style="margin-top: 5px"><a class="btn btn-primary" href="<?php echo base_url('Place/') . $row->id; ?>">View more details</a></p>
+                            foreach ($main_places->result() as $row) {
+                                ?>
+                                <div class="col-md-3">
+                                    <div class="thumbnail">
+                                        <h3><?php echo $row->name; ?></h3>
+                                        <img alt="Bootstrap Thumbnail First" src="<?php echo base_url($row->image); ?>" />
+                                        <div class="caption">
+                                            <p><?php echo $row->description; ?></p>
+                                            <p style="margin-top: 5px"><a class="btn btn-primary" href="<?php echo base_url('Place/') . $row->id; ?>">View more details</a></p>
+                                        </div>
                                     </div>
-                                </div>
-                            </div> 
+                                </div> 
+                                <?php
+                            }
+                            ?>
+                        </div>
+                        <div class="content_white" style="text-align: left">
+                            <h2>Other places in Sri Lanka</h2>
+                            <p>Description</p>
+                        </div>
+                        <div class="row">
                             <?php
-                        }
-                        ?>
+                            foreach ($other_places->result() as $row) {
+                                ?>
+                                <div class="col-md-3">
+                                    <div class="thumbnail">
+                                        <h3><?php echo $row->name; ?></h3>
+                                        <img alt="Bootstrap Thumbnail First" src="<?php echo base_url($row->image); ?>" />
+                                        <div class="caption">
+                                            <p><?php echo $row->description; ?></p>
+                                            <p style="margin-top: 5px"><a class="btn btn-primary" href="<?php echo base_url('Place/') . $row->id; ?>">View more details</a></p>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <?php
+                            }
+                            ?>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-12">
-                </div>
-            </div>
-            <div class="footer">
-                <div class="footer_bottom">
-                    <div class="copy">
-                        <p>&copy; 2014 Template by <a href="#" target="_blank">  w3layouts</a></p>
+                    <div class="col-md-12">
                     </div>
                 </div>
             </div>
-            <script src="<?php echo base_url('public/js/jquery.min.js'); ?>"></script>
+        </div>
+        <div class="footer">
+            <div class="footer_bottom">
+                <div class="copy">
+                    <p>&copy; 2014 Template by <a href="#" target="_blank">  w3layouts</a></p>
+                </div>
+            </div>
+        </div>
+        <script src="<?php echo base_url('public/js/jquery.min.js'); ?>"></script>
+        <script src="<?php echo base_url('public/js/searchPlaces.js'); ?>"></script>
     </body>
 </html>		
