@@ -58,6 +58,16 @@ class PlaceModel extends CI_Model {
         $result = $this->db->get();
         return $result;
     }
+    
+    public function getStarHotel($id, $star){
+        $this->db->select('*');
+        $this->db->from('place_hotel_info');
+        $this->db->where('place_hotel_info.place_id', $id);
+        $this->db->where('place_hotel_info.hotel_star', $star);
+        $this->db->join('hotel', 'place_hotel_info.hotel_id = hotel.id');
+        $result = $this->db->get();
+        return $result;
+    }
 
     public function getAllHotels($id) {
         $this->db->select('*');

@@ -17,16 +17,16 @@
                 <div class="menu">
                     <a class="toggleMenu" href="#"><img src="images/nav_icon.png" alt="" /></a>
                     <ul class="nav" id="nav">
-                        <li><a href="<?php echo base_url();?>">Home</a></li>
+                        <li><a href="<?php echo base_url(); ?>">Home</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plan your tour<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="<?php echo base_url('Packages');?>">Our packages</a></li>
-                                <li><a href="<?php echo base_url('Places');?>">Plan package</a></li>
-                                <li><a href="<?php echo base_url('Places');?>">Get tour guide</a></li>
+                                <li><a href="<?php echo base_url('Packages'); ?>">Our packages</a></li>
+                                <li><a href="<?php echo base_url('Places'); ?>">Plan package</a></li>
+                                <li><a href="<?php echo base_url('Places'); ?>">Get tour guide</a></li>
                             </ul>
                         </li>
-                        <li class="current"><a href="<?php echo base_url('Places');?>">Places to visit</a></li>
+                        <li class="current"><a href="<?php echo base_url('Places'); ?>">Places to visit</a></li>
                         <li><a href="Reviews">Reviews</a></li>
                         <div class="clear"></div>
                     </ul>
@@ -41,7 +41,7 @@
             <!----//start-banner---->
             <div class="container">
                 <section class="title-section">
-                    <h1 class="title-header">Places to visit</h1>
+                    <h1 class="title-header">Place details</h1>
                     <ul class="breadcrumb breadcrumb__t"><li><a href="#">Home</a></li><li class="active">Blog</li></ul>  
                 </section> 
             </div>
@@ -71,11 +71,8 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="thumbnail">
-                                    <div class="map">
-                                        <iframe width="600" frameborder="0" style="border:1" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJXcyB0pFP4joRTufgPM0vS-o&key=AIzaSyCWUG3LJ6Pa8Zr551qR_usacBfn_NWA_xU" allowfullscreen>
-                                        </iframe><br>
-                                        <small><a href="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265" style="color:#666;text-align:left;font-size:12px"></a></small>
-                                    </div>
+                                    <div id="map" style="width: 100%; height: 400px;"></div>
+                                    <input type="hidden" id="map_place_id" value="<?php echo $place_info->id; ?>">
                                 </div>
                             </div>
                         </div>
@@ -126,39 +123,54 @@
                                         </div>
                                         <form role="form">                                          
                                             <div class="form-group">
-                                                <select class="form-control" id="hotel">
-                                                    <option>Two Star</option>
-                                                    <option>Three Star</option>
-                                                    <option>Four Star</option>
-                                                    <option>Five Star</option>
+                                                <select class="form-control" id="hotel" onchange="getHotels(<?php echo $place_info->id; ?>, this.value)">
+                                                    <option value="TWO">Two Star</option>
+                                                    <option value="THREE">Three Star</option>
+                                                    <option value="FOUR">Four Star</option>
+                                                    <option value="FIVE">Five Star</option>
                                                 </select>
                                             </div>
                                         </form>
-                                        <?php
-                                        foreach ($two_star_hotels->result() as $row) {
-                                            ?>
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="row">
-                                                        <div class="col-md-4" style="border: 1px">
-                                                            <div class="thumbnail">
-                                                                <img alt="Bootstrap Thumbnail First" src="<?php echo base_url($row->image); ?>" />
+                                        <div id="hotelsInfo">
+                                            <?php
+                                            foreach ($two_star_hotels->result() as $row) {
+                                                ?>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="row">
+                                                            <div class="col-md-4" style="border: 1px">
+                                                                <div class="thumbnail">
+                                                                    <img alt="Bootstrap Thumbnail First" src="<?php echo base_url($row->image); ?>" />
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="col-md-8">
-                                                            <div class="thumbnail">
-                                                                <div class="caption">
-                                                                    <h4><?php echo $row->name; ?></h4>
-                                                                    <p><small><?php echo $row->description; ?></small></p>
+                                                            <div class="col-md-8">
+                                                                <div class="thumbnail">
+                                                                    <div class="caption">
+                                                                        <h4><?php echo $row->name; ?></h4>
+                                                                        <p><small><?php echo $row->description; ?></small></p>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <?php
-                                        }
-                                        ?>
+                                                <?php
+                                            }
+                                            if (sizeof($two_star_hotels->result()) == 0) {
+                                                ?>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <h4>No hotels found</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <?php
+                                            }
+                                            ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -175,5 +187,8 @@
             </div>
         </div>
         <script src="<?php echo base_url('public/js/jquery.min.js'); ?>"></script>
+        <script src="http://maps.google.com/maps/api/js?key=AIzaSyBiLOyslTC14QS8xl906N-6AvpzOn7BEgg" type="text/javascript"></script>
+        <script type="text/javascript" src="<?php echo base_url('public/js/map_place.js'); ?>"></script>
+        <script type="text/javascript" src="<?php echo base_url('public/js/place_page.js'); ?>"></script>
     </body>
 </html>		
