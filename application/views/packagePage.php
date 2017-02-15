@@ -20,17 +20,17 @@
             <div class="menu">
                 <a class="toggleMenu" href="#"><img src="images/nav_icon.png" alt="" /> </a>
                 <ul class="nav" id="nav">
-                    <li><a href="<?php echo base_url();?>">Home</a></li>
+                    <li><a href="<?php echo base_url(); ?>">Home</a></li>
                     <li class="dropdown current">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plan your tour<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="<?php echo base_url('Packages');?>">Our packages</a></li>
-                            <li><a href="<?php echo base_url('Places');?>">Plan package</a></li>
-                            <li><a href="<?php echo base_url('Places');?>">Get tour guide</a></li>
+                            <li><a href="<?php echo base_url('Packages'); ?>">Our packages</a></li>
+                            <li><a href="<?php echo base_url('Places'); ?>">Plan package</a></li>
+                            <li><a href="<?php echo base_url('Places'); ?>">Get tour guide</a></li>
                         </ul>
                     </li>
-                    <li><a href="<?php echo base_url('Places');?>">Places to visit</a></li>
-                    <li><a href="<?php echo base_url('Reviews');?>">Reviews</a></li>
+                    <li><a href="<?php echo base_url('Places'); ?>">Places to visit</a></li>
+                    <li><a href="<?php echo base_url('Reviews'); ?>">Reviews</a></li>
                     <div class="clear"></div>
                 </ul>
 
@@ -93,21 +93,11 @@
                                             <label for="hotel">
                                                 Hotel
                                             </label>
-                                            <select class="form-control" id="hotel" onchange="getHotels(<?php echo $package->id;?>,this.value)">
+                                            <select class="form-control" id="hotel" onchange="getHotelsPackage(<?php echo $package->id; ?>, this.value)">
                                                 <option value="TWO">Two star</option>
                                                 <option value="THREE">Three star</option>
                                                 <option value="FOUR">Four star</option>
                                                 <option value="FIVE">Five star</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="room">
-                                                Room condition
-                                            </label>
-                                            <select class="form-control" id="room">
-                                                <option>Standard rooms</option>
-                                                <option>Delux rooms</option>
-                                                <option>Sweet rooms</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
@@ -195,25 +185,37 @@
                                             <h3>Hotel details</h3>
                                             <form role="form">
                                                 <div class="form-group">
-                                                    <label for="single">
+                                                    <label for="s_<?php echo $placeInfo['place']->id; ?>">
                                                         Hotel
                                                     </label>
-                                                    <select class="form-control" id="single">
-                                                        <option>Two Star</option>
+                                                    <select class="form-control" id="s_<?php echo $placeInfo['place']->id; ?>" onchange="getHotelsPlace(<?php echo $placeInfo['place']->id; ?>, this.value)">
+                                                        <option value="TWO">Two Star</option>
+                                                        <option value="THREE">Three Star</option>
+                                                        <option value="FOUR">Four Star</option>
+                                                        <option value="FIVE">Five Star</option>
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="single">
+                                                    <label for="h_<?php echo $placeInfo['place']->id; ?>">
                                                         Select hotel
                                                     </label>
-                                                    <select class="form-control" id="single">
+                                                    <select class="form-control" id="h_<?php echo $placeInfo['place']->id; ?>">
                                                         <?php
                                                         foreach ($placeInfo['hotels']->result() as $row) {
                                                             ?>
-                                                            <option><?php echo $row->hotel_name; ?></option>
+                                                        <option value="<?php echo $row->hotel_id;?>"><?php echo $row->hotel_name; ?></option>
                                                             <?php
                                                         }
                                                         ?>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="r_<?php echo $placeInfo['place']->id; ?>">
+                                                        Room condition
+                                                    </label>
+                                                    <select class="form-control" id="r_<?php echo $placeInfo['place']->id; ?>">
+                                                        <option>Standard</option>
+                                                        <option>Delux</option>
                                                     </select>
                                                 </div>
                                             </form>
@@ -246,7 +248,7 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="<?php echo base_url('public/js/map.js');?>"></script>
-    <script type="text/javascript" src="<?php echo base_url('public/js/hotelInfo.js');?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('public/js/map.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('public/js/hotelInfo.js'); ?>"></script>
 </body>
 </html>		
