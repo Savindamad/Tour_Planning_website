@@ -84,5 +84,28 @@ class PackageController extends CI_Controller {
         $hotelInfo[] = $temp;
         echo json_encode($hotelInfo);
     }
+    
+    public function getMapPlaces(){
+        $id = $this->input->post('packageId');
+        
+        $this->load->model('PackageModel');
+        $places = $this->PackageModel->getMapPlaces($id);
+        $mapPlaces = array();
+        foreach ($places->result() as $row){
+            $temp = array();
+            /*
+            $temp["name"]=$row->name;
+            $temp["latitude"]=$row->latitude;
+            $temp["longitude"]=$row->longitude;
+            $temp["id"]=$row->place_id;
+             */
+            $temp[] = $row->name;
+            $temp[] = $row->latitude;
+            $temp[] = $row->longitude;
+            $temp[] = $row->place_id;
+            $mapPlaces[]=$temp;
+        }
+        echo json_encode($mapPlaces);
+    }
 
 }

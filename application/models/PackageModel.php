@@ -42,5 +42,14 @@ class PackageModel extends CI_Model {
         $result = $this->db->get();
         return $result;
     }
+    
+    public function getMapPlaces($packageId){
+        $this->db->select('*');
+        $this->db->from('package_place_info');
+        $this->db->where('package_id', $packageId);
+        $this->db->join('place', 'package_place_info.place_id = place.id');
+        $result = $this->db->get();
+        return $result;
+    }
 
 }
