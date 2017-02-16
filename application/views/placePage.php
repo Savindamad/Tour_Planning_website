@@ -8,44 +8,10 @@
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
     </head>
     <body>
-        <!----start-header---->
-        <div class="header">
-            <div class="container">
-                <div class="logo">
-                    <a href="<?php echo base_url(); ?>"><img style="width: 200px; margin-top: -30px; margin-bottom: -30px" src="<?php echo base_url('public/images/logo1.png'); ?>" alt=""></a>
-                </div>
-                <div class="menu">
-                    <a class="toggleMenu" href="#"><img src="images/nav_icon.png" alt="" /></a>
-                    <ul class="nav" id="nav">
-                        <li><a href="<?php echo base_url(); ?>">Home</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plan your tour<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="<?php echo base_url('Packages'); ?>">Our packages</a></li>
-                                <li><a href="<?php echo base_url('Places'); ?>">Plan package</a></li>
-                                <li><a href="<?php echo base_url('Places'); ?>">Get tour guide</a></li>
-                            </ul>
-                        </li>
-                        <li class="current"><a href="<?php echo base_url('Places'); ?>">Places to visit</a></li>
-                        <li><a href="Reviews">Reviews</a></li>
-                        <div class="clear"></div>
-                    </ul>
-
-                </div>							
-                <div class="clearfix"> </div>
-                <!----//End-top-nav---->
-            </div>
-        </div>
-        <!----//End-header---->
-        <div class="about">
-            <!----//start-banner---->
-            <div class="container">
-                <section class="title-section">
-                    <h1 class="title-header">Place details</h1>
-                    <ul class="breadcrumb breadcrumb__t"><li><a href="#">Home</a></li><li class="active">Blog</li></ul>  
-                </section> 
-            </div>
-        </div>
+        <?php
+        $this->load->view('website/navbar', Array('current' => 'place', 'title' => 'Places to visit'));
+        ?>
+        
         <div class="container-fluid" style="margin-top: 40px; margin-bottom: 20px;">
             <div class="col-md-1"></div>
             <div class="col-md-10" style="background-color: #f6f6f6; border-radius: 5px;">
@@ -179,13 +145,11 @@
                 </div>
             </div>
         </div>
-        <div class="footer">
-            <div class="footer_bottom">
-                <div class="copy">
-                    <p>&copy; 2014 Template by <a href="#" target="_blank">  w3layouts</a></p>
-                </div>
-            </div>
-        </div>
+        
+        <?php
+        $this->load->view('website/footer');
+        ?>
+        
         <script src="<?php echo base_url('public/js/jquery.min.js'); ?>"></script>
         <script src="http://maps.google.com/maps/api/js?key=AIzaSyBiLOyslTC14QS8xl906N-6AvpzOn7BEgg" type="text/javascript"></script>
         <script type="text/javascript" src="<?php echo base_url('public/js/map_place.js'); ?>"></script>

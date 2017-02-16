@@ -61,4 +61,4 @@ $route['Places'] = 'PlacesController/index';
 $route['Activities'] = 'ActivitiesController/index';
 $route['Reviews'] = 'ReviewsController/index';
 $route['TourGuide'] = 'TourGuideController/index';
-$route['CustomPackage'] = 'CustomPackage/index';
+$route['CustomPackage'] = 'CustomPackageController/index';
