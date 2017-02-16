@@ -23,27 +23,43 @@
         <div class="clearfix"> </div>
     </div>
 </div>
-
-<div class="about">
-    <div class="container">
-        <section class="title-section">
-            <div class="row">
-                <div class="col-md-9">
-                    <h1 class="title-header"><?php if (isset($title)) echo $title; ?></h1>
-                </div>
-                <div class="col-md-3">
-                    <?php
-                    if (isset($current) && $current == 'places') {
-                        ?>
-
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search places.." oninput="searchPlace(this.value)">
-                        </div>
+<?php
+if (isset($current) && $current != 'home') {
+    ?>
+    <div class="about">
+        <div class="container">
+            <section class="title-section">
+                <div class="row">
+                    <div class="col-md-9">
+                        <h1 class="title-header"><?php if (isset($title)) echo $title; ?></h1>
+                    </div>
+                    <div class="col-md-3">
                         <?php
-                    }
-                    ?>
+                        if (isset($current) && $current == 'places') {
+                            ?>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search places.." oninput="searchPlace(this.value)">
+                            </div>
+                            <?php
+                        }
+                        ?>
+                    </div>
                 </div>
-            </div>
-        </section> 
+            </section> 
+        </div>
     </div>
-</div>
+    <?php
+} else {
+    ?>
+    <div class="banner text-center">
+        <div class="container">
+            <div class="banner-info">
+                <h1>Walk Lanka Travels</h1>
+                <p>Description</p>
+            </div>
+        </div>
+    </div>
+    <?php
+}
+?>
