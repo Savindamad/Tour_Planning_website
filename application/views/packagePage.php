@@ -3,7 +3,6 @@
         <title>Tour planning</title>
         <link href="<?php echo base_url('public/css/bootstrap.css') ?>" rel='stylesheet' type='text/css' />
         <link href="<?php echo base_url('public/css/style.css') ?>" rel='stylesheet' type='text/css' />
-        <link href="<?php echo base_url('public/css/map.css') ?>" rel='stylesheet' type='text/css' />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
     </head>
@@ -124,7 +123,7 @@
                                                         <div class="thumbnail">
                                                             <img alt="Bootstrap Thumbnail First" src="<?php echo $placeInfo['place']->place_image; ?>" />
                                                             <div class="caption">
-                                                                <p style="margin-top: 5px"><a class="btn btn-primary" href="<?php echo base_url('Place/').$placeInfo['place']->place_id;?>">View more details</a></p>
+                                                                <p style="margin-top: 5px"><a class="btn btn-primary" href="<?php echo base_url('Place/') . $placeInfo['place']->place_id; ?>">View more details</a></p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -211,6 +210,6 @@
         <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
         <script src="http://maps.google.com/maps/api/js?key=AIzaSyBiLOyslTC14QS8xl906N-6AvpzOn7BEgg" type="text/javascript"></script>
         <script type="text/javascript" src="<?php echo base_url('public/js/map_package_places.js'); ?>"></script>
-        <script type="text/javascript" src="<?php echo base_url('public/js/hotelInfo.js'); ?>"></script>
+        <script type="text/javascript" src="<?php echo base_url('public/js/package_page.js'); ?>"></script>
     </body>
 </html>		
