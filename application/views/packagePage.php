@@ -11,7 +11,7 @@
         $this->load->view('website/navbar', Array('current' => 'package', 'title' => 'Plan your tour'));
         ?>
         
-        <div class="container-fluid" style="margin-top: 40px; margin-bottom: 20px;">
+        <div class="container-fluid" style="margin-top: 40px; margin-bottom: 40px;">
             <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
@@ -67,7 +67,7 @@
                                                 <label for="numPersons">
                                                     Number of persons
                                                 </label>
-                                                <input type="number" class="form-control" id="numPersons" />
+                                                <input type="number" class="form-control" id="numPersons" min="1" max="30" value="1"/>
                                             </div>
                                             <div class="form-group">
                                                 <label for="single">
