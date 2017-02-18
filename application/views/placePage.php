@@ -150,7 +150,8 @@
         $this->load->view('website/footer');
         ?>
         
-        <script src="<?php echo base_url('public/js/jquery.min.js'); ?>"></script>
+        <script src="<?php echo base_url('bootstrap/js/jquery-3.1.1.min.js'); ?>"></script>
+        <script src="<?php echo base_url('bootstrap/js/bootstrap.min.js'); ?>"></script>
         <script src="http://maps.google.com/maps/api/js?key=AIzaSyBiLOyslTC14QS8xl906N-6AvpzOn7BEgg" type="text/javascript"></script>
         <script type="text/javascript" src="<?php echo base_url('public/js/map_place.js'); ?>"></script>
         <script type="text/javascript" src="<?php echo base_url('public/js/place_page.js'); ?>"></script>

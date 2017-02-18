@@ -31,5 +31,22 @@ class HomeModel extends CI_Model {
         $result = $this->db->get();
         return $result;
     }
+    
+    public function getRandImages() {
+        $this->db->select('*');
+        $this->db->from('image');
+        $this->db->where('type','SLIDE');
+        $this->db->order_by("id", "random");
+        $this->db->limit(4, 0);
+        $result = $this->db->get();
+        return $result;
+    }
+    
+    public function getCompanyInfo() {
+        $this->db->select('*');
+        $this->db->from('company_info');
+        $result = $this->db->get();
+        return $result;
+    }
 
 }

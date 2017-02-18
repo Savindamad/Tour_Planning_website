@@ -49,19 +49,20 @@
                                             <label for="numPersons">
                                                 Number of persons
                                             </label>
-                                            <input type="number" class="form-control" id="numPersons" min="1" max="30" value="1"/>
+                                            <input type="number" class="form-control" min="1" max="30" value="1" id="numPersons"/>
                                         </div>
                                         <div class="form-group">
-                                            <label for="single">
+                                            <label for="numDays">
                                                 Number of days
                                             </label>
-                                            <input type="number" class="form-control" id="single" min="2" max="30" value="2" />
+                                            <input type="number" class="form-control" min="2" max="30" value="2" id="numDays" />
                                         </div>
                                         <div class="form-group">
-                                            <label for="double">
+                                            <label for="numPlaces">
                                                 Number of places
                                             </label>
-                                            <input type="number" class="form-control" id="double" min="1" max="30" value="1"/>
+                                            <input type="number" class="form-control" min="1" max="30" value="1" id="numPlaces" onchange="changeNumPlaces(this.value)"/>
+                                            <input type="hidden" id="numPlaces1" value="1"/>
                                         </div>
                                         <div class="form-group">
                                             <label for="comment">Text</label>
@@ -119,31 +120,39 @@
                     </div>
                 </div>
             </div>
-            <div class="row" style="margin-top: 30px;">
+            <div class="row" style="margin-top: 10px;">
                 <div class="col-md-12">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-1"></div>
-                                <div class="col-md-11">
-                                    <div class="row">
-                                        <div class="col-md-1"></div>
-                                        <div class="col-md-10" style="background: #ffffff; border-radius: 5px">
-                                            <h4 style="margin-top: 15px;"><b>Place 01</b></h4>
-                                            <form role="form">
-                                                <div class="form-group">
-                                                    <label for="email">
-                                                        Select place
-                                                    </label>
-                                                    <input type="email" class="form-control" id="email" />
-                                                </div>
-                                            </form>
+                        <div id="places">
+                            <div class="col-md-6" id="d_1">
+                                <div class="row" style="margin-top: 20px;">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-11">
+                                        <div class="row">
+                                            <div class="col-md-1"></div>
+                                            <div class="col-md-10" style="background: #ffffff; border-radius: 5px">
+                                                <h4 style="margin-top: 15px;"><b>Place 01</b></h4>
+                                                <form role="form">
+                                                    <div class="form-group">
+                                                        <label for="p_1">
+                                                            Select place
+                                                        </label>
+                                                        <select class="form-control" id="p_1">
+                                                            <?php
+                                                            foreach ($places->result() as $row) {
+                                                                echo "<option value='$row->id'>$row->name</option>";
+                                                            }
+                                                            ?>
+                                                        </select>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="col-md-1"></div>
                                         </div>
-                                        <div class="col-md-1"></div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>         
+                            </div>    
+                        </div>
                     </div>
                 </div>
             </div>
@@ -186,7 +195,9 @@
     $this->load->view('website/footer');
     ?>
 
-    <script type="text/javascript" src="<?php echo base_url('public/js/jquery.min.js') ?>"></script>
+    <script src="<?php echo base_url('bootstrap/js/jquery-3.1.1.min.js'); ?>"></script>
+    <script src="<?php echo base_url('bootstrap/js/bootstrap.min.js'); ?>"></script>
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <script type="text/javascript" src="<?php echo base_url('public/js/tour_guide_page.js') ?>"></script>
 </body>
 </html>

@@ -4,6 +4,7 @@
         <title>Home</title>
         <link href="<?php echo base_url('public/css/bootstrap.css'); ?>" rel='stylesheet' type='text/css' />
         <link href="<?php echo base_url('public/css/style.css'); ?>" rel='stylesheet' type='text/css' />
+        <link href="<?php echo base_url('public/css/full_slider.css'); ?>" rel='stylesheet' type='text/css' />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
@@ -11,11 +12,49 @@
         <link href='http://fonts.googleapis.com/css?family=Lato:100,200,300,400,600,700,900' rel='stylesheet' type='text/css'>
     </head>
     <body>
-        
+
         <?php
         $this->load->view('website/navbar', Array('current' => 'home', 'title' => 'Home page'));
         ?>
         
+        <header id="myCarousel" class="carousel slide">
+
+            <!-- Wrapper for Slides -->
+            <div class="carousel-inner">      
+                <div class="item active">
+                    <!-- Set the first background image using inline CSS below. -->
+                    <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
+                    <div class="carousel-caption">
+                        <h2></h2>
+                    </div>
+                </div>
+                <div class="item">
+                    <!-- Set the second background image using inline CSS below. -->
+                    <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
+                    <div class="carousel-caption">
+                        <h2></h2>
+                    </div>
+                </div>
+                <div class="item">
+                    <!-- Set the third background image using inline CSS below. -->
+                    <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+                    <div class="carousel-caption">
+                        <h2></h2>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="icon-prev"></span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="icon-next"></span>
+            </a>
+
+        </header>
+
         <div class="main">
             <div class="content_white">
                 <h2>Plan your tour</h2>
@@ -106,11 +145,18 @@
                 <div style="margin-top: -20px; margin-bottom: 40px;">
                 </div>
             </div>
-            
+
             <?php
             $this->load->view('website/home_footer');
             ?>
-            
+
+            <script src="<?php echo base_url('bootstrap/js/jquery-3.1.1.min.js'); ?>"></script>
+            <script src="<?php echo base_url('bootstrap/js/bootstrap.min.js'); ?>"></script>
+            <script>
+                $('.carousel').carousel({
+                    interval: 5000 //changes the speed
+                })
+            </script>
             <script src="<?php echo base_url('public/js/jquery.min.js'); ?>"></script>
             <script type="text/javascript" src="<?php echo base_url('public/js/slide_image.js'); ?>"></script>
             <script type="text/javascript" src="<?php echo base_url('public/js/responsive-nav.js'); ?>"></script>

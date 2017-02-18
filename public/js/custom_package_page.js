@@ -169,6 +169,7 @@ function changeNumDays(numDays) {
     } else {
         for (var i = numDaysPrv; i > numDays; i--) {
             $('#d_' + i).fadeOut(500);
+            document.getElementById("numDays1").value = numDays;
         }
     }
 }

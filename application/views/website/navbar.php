@@ -11,8 +11,8 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plan your tour<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li <?php if (isset($current) && $current == 'packages') echo 'class="current"'; ?>><a href="<?php echo base_url('Packages'); ?>">Our packages</a></li>
-                        <li <?php if (isset($current) && $current == 'customPackage') echo 'class="current"'; ?>><a href="<?php echo base_url('CustomPackage'); ?>">Plan package</a></li>
-                        <li <?php if (isset($current) && $current == 'tourGuide') echo 'class="current"'; ?>><a href="<?php echo base_url('TourGuide'); ?>">Get tour guide</a></li>
+                        <li <?php if (isset($current) && $current == 'customPackage') echo 'class="current"'; ?>><a href="<?php echo base_url('CustomPackage'); ?>">Plan your package</a></li>
+                        <li <?php if (isset($current) && $current == 'tourGuide') echo 'class="current"'; ?>><a href="<?php echo base_url('TourGuide'); ?>">Book a vehicle</a></li>
                     </ul>
                 </li>
                 <li <?php if (isset($current) && ($current == 'places' || $current == 'place')) echo 'class="current"'; ?>><a href="<?php echo base_url('Places'); ?>">Places to visit</a></li>
@@ -51,15 +51,6 @@ if (isset($current) && $current != 'home') {
     </div>
     <?php
 } else {
-    ?>
-    <div class="banner text-center">
-        <div class="container">
-            <div class="banner-info">
-                <h1>Walk Lanka Travels</h1>
-                <p>Description</p>
-            </div>
-        </div>
-    </div>
-    <?php
+
 }
 ?>

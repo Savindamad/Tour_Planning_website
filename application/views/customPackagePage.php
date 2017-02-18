@@ -255,7 +255,8 @@
         $this->load->view('website/footer');
         ?>
 
-        <script type="text/javascript" src="<?php echo base_url('public/js/jquery.min.js') ?>"></script>
+        <script src="<?php echo base_url('bootstrap/js/jquery-3.1.1.min.js'); ?>"></script>
+        <script src="<?php echo base_url('bootstrap/js/bootstrap.min.js'); ?>"></script>
         <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
         <script type="text/javascript" src="<?php echo base_url('public/js/custom_package_page.js') ?>"></script>
     </body>
