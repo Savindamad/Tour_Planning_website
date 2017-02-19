@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'tour_planning',
+	'hostname' => 'ap-cdbr-azure-east-a.cloudapp.net',
+	'username' => 'bdb82cad696791',
+	'password' => '1ed31f67',
+	'database' => 'walk_lanka_db',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
