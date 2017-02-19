@@ -2,8 +2,8 @@
     <div class="footer_top">
         <div class="container">
             <div class="footer_head">
-                <h2>Lorem ipsum dolor sit amet</h2>
-                <p>diam nonummy nibh euismod tincidunt ut laoreet dolore magna</p>
+                <h2>Walk Lanka Travels</h2>
+                <p style="line-height: 90%; font-size: 130%;"><small></small></p>
             </div>
             <div class="row footer_grid">
                 <div class="col-md-9"> 

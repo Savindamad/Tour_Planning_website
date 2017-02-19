@@ -35,7 +35,6 @@ class HomeModel extends CI_Model {
     public function getRandImages() {
         $this->db->select('*');
         $this->db->from('image');
-        $this->db->where('type','SLIDE');
         $this->db->order_by("id", "random");
         $this->db->limit(4, 0);
         $result = $this->db->get();
@@ -46,7 +45,7 @@ class HomeModel extends CI_Model {
         $this->db->select('*');
         $this->db->from('company_info');
         $result = $this->db->get();
-        return $result;
+        return $result->result();
     }
 
 }

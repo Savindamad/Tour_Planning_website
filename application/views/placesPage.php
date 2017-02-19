@@ -11,7 +11,7 @@
         <?php
         $this->load->view('website/navbar', Array('current' => 'places', 'title' => 'Places to visit'));
         ?>
-        
+
         <div class="container-fluid">
             <div id="placeResult">
                 <div class="row" style="margin-top: 40px">
@@ -30,7 +30,17 @@
                                         <h3><?php echo $row->name; ?></h3>
                                         <img alt="Bootstrap Thumbnail First" src="<?php echo base_url($row->image); ?>" />
                                         <div class="caption">
-                                            <p><?php echo $row->description; ?></p>
+                                            <p>
+                                                <?php
+                                                if (strlen($row->description) > 150) {
+                                                    $stringCut = substr($row->description, 0, 148);
+                                                    $string = substr($stringCut, 0, strrpos($stringCut, ' '));
+                                                    echo $string . '..';
+                                                } else {
+                                                    echo substr($row->description, 0, 150);
+                                                }
+                                                ?>
+                                            </p>
                                             <p style="margin-top: 5px"><a class="btn btn-primary" href="<?php echo base_url('Place/') . $row->id; ?>">View more details</a></p>
                                         </div>
                                     </div>
@@ -52,7 +62,17 @@
                                         <h3><?php echo $row->name; ?></h3>
                                         <img alt="Bootstrap Thumbnail First" src="<?php echo base_url($row->image); ?>" />
                                         <div class="caption">
-                                            <p><?php echo $row->description; ?></p>
+                                            <p>
+                                                <?php
+                                                if (strlen($row->description) > 150) {
+                                                    $stringCut = substr($row->description, 0, 148);
+                                                    $string = substr($stringCut, 0, strrpos($stringCut, ' '));
+                                                    echo $string . '..';
+                                                } else {
+                                                    echo substr($row->description, 0, 150);
+                                                }
+                                                ?>
+                                            </p>
                                             <p style="margin-top: 5px"><a class="btn btn-primary" href="<?php echo base_url('Place/') . $row->id; ?>">View more details</a></p>
                                         </div>
                                     </div>
@@ -67,11 +87,11 @@
                 </div>
             </div>
         </div>
-        
+
         <?php
         $this->load->view('website/footer');
         ?>
-        
+
         <script src="<?php echo base_url('bootstrap/js/jquery-3.1.1.min.js'); ?>"></script>
         <script src="<?php echo base_url('bootstrap/js/bootstrap.min.js'); ?>"></script>
         <script src="<?php echo base_url('public/js/places_page.js'); ?>"></script>

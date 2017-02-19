@@ -16,151 +16,206 @@
         <?php
         $this->load->view('website/navbar', Array('current' => 'home', 'title' => 'Home page'));
         ?>
-        
+
         <header id="myCarousel" class="carousel slide">
 
             <!-- Wrapper for Slides -->
-            <div class="carousel-inner">      
-                <div class="item active">
+            <div class="carousel-inner">
+                <?php
+                $i = 0;
+                foreach ($images->result() as $row) {
+                    if ($i == 0) {
+                        $i = 1;
+                        echo '<div class="item active">';
+                    } else {
+                        echo '<div class="item">';
+                    }
+                    ?>
                     <!-- Set the first background image using inline CSS below. -->
-                    <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
+                    <div class="fill" style="background-image:url(<?php echo $row->path; ?>);"></div>
                     <div class="carousel-caption">
                         <h2></h2>
                     </div>
                 </div>
-                <div class="item">
-                    <!-- Set the second background image using inline CSS below. -->
-                    <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
-                    <div class="carousel-caption">
-                        <h2></h2>
-                    </div>
-                </div>
-                <div class="item">
-                    <!-- Set the third background image using inline CSS below. -->
-                    <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
-                    <div class="carousel-caption">
-                        <h2></h2>
-                    </div>
-                </div>
-                
-            </div>
-
-            <!-- Controls -->
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                <span class="icon-prev"></span>
-            </a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                <span class="icon-next"></span>
-            </a>
-
-        </header>
-
-        <div class="main">
-            <div class="content_white">
-                <h2>Plan your tour</h2>
-                <p>Description</p>
-            </div>
-            <div class="container" >
-                <div class="testmonial"> 
-                </div>
-                <div class="row" style="margin-top: -50px">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <?php
-                            foreach ($packages->result() as $row) {
-                                ?>
-                                <div class="col-md-4">
-                                    <div class="thumbnail">
-                                        <img alt="Bootstrap Thumbnail First" src="<?php echo base_url($row->image); ?>" />
-                                        <div class="caption">
-                                            <h3><?php echo $row->name; ?></h3>
-                                            <p style="text-align: justify; margin-bottom: 10px;"><?php echo $row->description; ?></p>
-                                            <p><a class="btn btn-primary" style="background: #D65724" href="<?php echo base_url('Package/') . $row->id; ?>">View more details</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <?php
-                            }
-                            ?>
-                        </div>
-                    </div>
-                </div>
-                <div style="margin-top: 40px;">
-                    <a href="<?php echo base_url('Packages'); ?>" class="about_btn">View more packages</a>
-                </div>
-            </div>
-            <div class="content_white">
-                <h2>Places to visit</h2>
-                <p>Description</p>
-            </div>
-            <div class="container">
-                <div class="testmonial" style="margin-bottom: -100px"> 
-                </div>
-                <ul id="flexiselDemo1">
-                    <?php
-                    foreach ($places->result() as $row) {
-                        ?>
-                        <li>
-                            <div class="thumbnail" style="text-align: left;">
-                                <img alt="Bootstrap Thumbnail First" src="<?php echo base_url($row->image) ?>" />
-                                <div class="caption">
-                                    <h3><?php echo $row->name; ?></h3>
-                                    <p style="text-align: justify; margin-bottom: 10px;"><small><?php echo $row->description; ?></small></p>
-                                    <a class="btn btn-primary" style="background: #D65724" href="<?php echo base_url('Place/') . $row->id; ?>">View more details</a>
-                                </div>
-                            </div>
-                        </li>
-                        <?php
-                    }
-                    ?>
-                </ul>
-                <div style="margin-top: -20px; margin-bottom: 40px;">
-                    <a href="<?php echo base_url('Places'); ?>" class="about_btn">View more places</a>
-                </div>
-            </div>
-            <div class="content_white" style="margin-top: -50px">
-                <h2>Activities</h2>
-                <p>Description</p>
-            </div>
-            <div class="container">
-                <div class="testmonial" style="margin-bottom: -100px"> 
-                </div>
-                <ul id="flexiselDemo2">
-                    <?php
-                    foreach ($activities->result() as $row) {
-                        ?>
-                        <li>
-                            <div class="thumbnail" style="text-align: left;">
-                                <img alt="Bootstrap Thumbnail First" src="<?php echo base_url($row->image) ?>" />
-                                <div class="caption">
-                                    <h3><?php echo $row->name; ?></h3>
-                                    <p style="text-align: justify; margin-bottom: 10px;"><small><?php echo $row->description; ?></small></p>
-                                </div>
-                            </div>
-                        </li>
-                        <?php
-                    }
-                    ?>
-                </ul>
-                <div style="margin-top: -20px; margin-bottom: 40px;">
-                </div>
-            </div>
-
-            <?php
-            $this->load->view('website/home_footer');
+                <?php
+            }
             ?>
 
-            <script src="<?php echo base_url('bootstrap/js/jquery-3.1.1.min.js'); ?>"></script>
-            <script src="<?php echo base_url('bootstrap/js/bootstrap.min.js'); ?>"></script>
-            <script>
-                $('.carousel').carousel({
-                    interval: 5000 //changes the speed
-                })
-            </script>
-            <script src="<?php echo base_url('public/js/jquery.min.js'); ?>"></script>
-            <script type="text/javascript" src="<?php echo base_url('public/js/slide_image.js'); ?>"></script>
-            <script type="text/javascript" src="<?php echo base_url('public/js/responsive-nav.js'); ?>"></script>
-            <script type="text/javascript" src="<?php echo base_url('public/js/jquery.flexisel.js'); ?>"></script>
-            <script type="text/javascript" src="<?php echo base_url('public/js/home_page.js'); ?>"></script>
-    </body>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+
+    </header>
+
+    <div class="main">
+        <div class="content_white">
+            <h2>Tour Packages</h2>
+            <p style="line-height: 90%; font-size: 130%;">Pick a tour package that suits your preferences. We have carefully added the most attractive places to the list.</p>
+        </div>
+        <div class="container" >
+            <div class="testmonial"> 
+            </div>
+            <div class="row" style="margin-top: -50px">
+                <div class="col-md-12">
+                    <div class="row">
+                        <?php
+                        foreach ($packages->result() as $row) {
+                            ?>
+                            <div class="col-md-4">
+                                <div class="thumbnail">
+                                    <img alt="Bootstrap Thumbnail First" src="<?php echo base_url($row->image); ?>" />
+                                    <div class="caption">
+                                        <h3><?php echo $row->name; ?></h3>
+                                        <p style="text-align: justify; margin-bottom: 10px;">
+                                            <?php
+                                            if (strlen($row->description) > 250) {
+                                                $stringCut = substr($row->description, 0, 248);
+                                                $string = substr($stringCut, 0, strrpos($stringCut, ' '));
+                                                echo $string . '..';
+                                            } else {
+                                                echo substr($row->description, 0, 300);
+                                            }
+                                            ?>
+                                        </p>
+                                        <p><a class="btn btn-primary" style="background: #D65724" href="<?php echo base_url('Package/') . $row->id; ?>">View more details</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 40px;">
+                <a href="<?php echo base_url('Packages'); ?>" class="about_btn">View more packages</a>
+            </div>
+        </div>
+        <div class="about_bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 service_box">
+                        <div class="thumbnail">
+                            <img alt="Bootstrap Thumbnail First" src="<?php echo base_url('public/images/other/planTour.png'); ?>" />
+                            <div class="caption">
+                                <h3>Plan Your Tour</h3>
+                                <h4>Looking for a tailor made tour? Go ahead and plan the tour yourself.</h4>
+                            </div>
+                            <a href="<?php echo base_url('CustomPackage'); ?>" class="about_btn" title="more">more</a>	
+                        </div>  		
+                    </div>
+                    <div class="col-md-6 service_box">
+                        <div class="thumbnail">
+                            <img alt="Bootstrap Thumbnail First" src="<?php echo base_url('public/images/other/tourGuide.png'); ?>" />
+                            <div class="caption">
+                                <h3>Transport Reservation</h3>
+                                <h4>Are you just looking for transportation and tour guidance?Let us arrange you a guided tour with comfortable transportation.</h4>
+                            </div>
+                            <a href="<?php echo base_url('TourGuide'); ?>" class="about_btn" title="more">more</a>	
+                        </div>  		
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content_white">
+            <h2>Places To Visit</h2>
+            <p style="line-height: 90%; font-size: 130%;">Sri Lanka is an island blessed with beautiful destinations. Don't miss out any. </p>
+        </div>
+        <div class="container">
+            <div class="testmonial" style="margin-bottom: -100px"> 
+            </div>
+            <ul id="flexiselDemo1">
+                <?php
+                foreach ($places->result() as $row) {
+                    ?>
+                    <li>
+                        <div class="thumbnail" style="text-align: left;">
+                            <img alt="Bootstrap Thumbnail First" src="<?php echo base_url($row->image) ?>" />
+                            <div class="caption">
+                                <h3><?php echo $row->name; ?></h3>
+                                <p style="text-align: justify; margin-bottom: 10px;"><small>
+                                        <?php
+                                        if (strlen($row->description) > 150) {
+                                            $stringCut = substr($row->description, 0, 148);
+                                            $string = substr($stringCut, 0, strrpos($stringCut, ' '));
+                                            echo $string . '..';
+                                        } else {
+                                            echo substr($row->description, 0, 150);
+                                        }
+                                        ?>
+                                    </small></p>
+                                <a class="btn btn-primary" style="background: #D65724" href="<?php echo base_url('Place/') . $row->id; ?>">View more details</a>
+                            </div>
+                        </div>
+                    </li>
+                    <?php
+                }
+                ?>
+            </ul>
+            <div style="margin-top: -20px; margin-bottom: 40px;">
+                <a href="<?php echo base_url('Places'); ?>" class="about_btn">View more places</a>
+            </div>
+        </div>
+        <div class="content_white" style="margin-top: -50px">
+            <h2>Activities</h2>
+            <p style="line-height: 90%; font-size: 130%;">Want to get the best out of your holidays? Checkout the things you can do in Sri Lanka.</p>
+        </div>
+        <div class="container">
+            <div class="testmonial" style="margin-bottom: -100px"> 
+            </div>
+            <ul id="flexiselDemo2">
+                <?php
+                foreach ($activities->result() as $row) {
+                    ?>
+                    <li>
+                        <div class="thumbnail" style="text-align: left;">
+                            <img alt="Bootstrap Thumbnail First" src="<?php echo base_url($row->image) ?>" />
+                            <div class="caption">
+                                <h3><?php echo $row->name; ?></h3>
+                                <p style="text-align: justify; margin-bottom: 10px;"><small>
+                                        <?php
+                                        if (strlen($row->description) > 150) {
+                                            $stringCut = substr($row->description, 0, 148);
+                                            $string = substr($stringCut, 0, strrpos($stringCut, ' '));
+                                            echo $string . '..';
+                                        } else {
+                                            echo substr($row->description, 0, 150);
+                                        }
+                                        ?>
+                                    </small></p>
+                            </div>
+                        </div>
+                    </li>
+    <?php
+}
+?>
+            </ul>
+            <div style="margin-top: -20px; margin-bottom: 40px;">
+            </div>
+        </div>
+    </div>
+
+<?php
+$this->load->view('website/home_footer',$companyInfo);
+?>
+
+    <script src="<?php echo base_url('bootstrap/js/jquery-3.1.1.min.js'); ?>"></script>
+    <script src="<?php echo base_url('bootstrap/js/bootstrap.min.js'); ?>"></script>
+    <script>
+        $('.carousel').carousel({
+            interval: 5000 //changes the speed
+        })
+    </script>
+    <script src="<?php echo base_url('public/js/jquery.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('public/js/slide_image.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('public/js/responsive-nav.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('public/js/jquery.flexisel.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('public/js/home_page.js'); ?>"></script>
+</body>
 </html>		

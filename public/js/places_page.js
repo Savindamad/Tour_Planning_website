@@ -7,7 +7,7 @@ function searchPlace(placeName) {
                 searchName: placeName
             },
             success: function (responseText) {
-                $('#placeResult').html(responseText);
+                $('#placeResult').html(responseText).hide().fadeIn(1000);
             }
         });
     } else {
@@ -18,7 +18,7 @@ function searchPlace(placeName) {
                 searchName: placeName
             },
             success: function (responseText) {
-                $('#placeResult').html(responseText);
+                $('#placeResult').html(responseText).hide().fadeIn(1000);
             }
         });
     }

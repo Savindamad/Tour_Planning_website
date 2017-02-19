@@ -34,11 +34,19 @@ class PlacesController extends CI_Controller {
                                         <h3>$row->name</h3>
                                         <img alt='Bootstrap Thumbnail First' src='" . base_url($row->image) . "' />
                                         <div class='caption'>
-                                            <p>$row->description</p>
-                                            <p style='margin-top: 5px'><a class='btn btn-primary' href='" . base_url('Place / ') . $row->id . "'>View more details</a></p>
-                                        </div>
-                                    </div>
-                                </div>";
+                                            <p>";
+            if (strlen($row->description) > 150) {
+                $stringCut = substr($row->description, 0, 148);
+                $string = substr($stringCut, 0, strrpos($stringCut, ' '));
+                echo $string . '..';
+            } else {
+                echo substr($row->description, 0, 150);
+            }
+            echo "</p>
+                <p style='margin-top: 5px'><a class='btn btn-primary' href='" . base_url('Place/') . $row->id . "'>View more details</a></p>
+                </div>
+                </div>
+                </div> ";
         }
         echo '</div>
                     </div>
@@ -65,13 +73,21 @@ class PlacesController extends CI_Controller {
             echo "<div class='col-md-3'>
                                     <div class='thumbnail'>
                                         <h3>$row->name</h3>
-                                        <img alt='Bootstrap Thumbnail First' src='base_url($row->image)' />
+                                        <img alt='Bootstrap Thumbnail First' src='" . base_url($row->image) . "' />
                                         <div class='caption'>
-                                            <p>$row->description</p>
-                                            <p style='margin-top: 5px'><a class='btn btn-primary' href='".base_url('Place/') . $row->id."'>View more details</a></p>
-                                        </div>
-                                    </div>
-                                </div> ";
+                                            <p>";
+            if (strlen($row->description) > 150) {
+                $stringCut = substr($row->description, 0, 148);
+                $string = substr($stringCut, 0, strrpos($stringCut, ' '));
+                echo $string . '..';
+            } else {
+                echo substr($row->description, 0, 150);
+            }
+            echo "</p>
+                <p style='margin-top: 5px'><a class='btn btn-primary' href='" . base_url('Place/') . $row->id . "'>View more details</a></p>
+                </div>
+                </div>
+                </div> ";
         }
         echo '</div>
                         <div class="content_white" style="text-align: left">
@@ -83,18 +99,26 @@ class PlacesController extends CI_Controller {
             echo "<div class='col-md-3'>
                                     <div class='thumbnail'>
                                         <h3>$row->name</h3>
-                                        <img alt='Bootstrap Thumbnail First' src='base_url($row->image)' />
+                                        <img alt='Bootstrap Thumbnail First' src='" . base_url($row->image) . "' />
                                         <div class='caption'>
-                                            <p>$row->description</p>
-                                            <p style='margin-top: 5px'><a class='btn btn-primary' href='" . base_url('Place/') . $row->id . "'>View more details</a></p>
-                                        </div>
-                                    </div>
-                                </div> ";
+                                            <p>";
+            if (strlen($row->description) > 150) {
+                $stringCut = substr($row->description, 0, 148);
+                $string = substr($stringCut, 0, strrpos($stringCut, ' '));
+                echo $string . '..';
+            } else {
+                echo substr($row->description, 0, 150);
+            }
+            echo "</p>
+                <p style='margin-top: 5px'><a class='btn btn-primary' href='" . base_url('Place/') . $row->id . "'>View more details</a></p>
+                </div>
+                </div>
+                </div> ";
         }
         echo '</div>
-                    </div>
-                    <div class="col-md-12">
-                    </div>
+                </div>
+                <div class="col-md-12">
+                </div>
                 </div>';
     }
 

@@ -12,43 +12,41 @@
         <?php
         $this->load->view('website/navbar', Array('current' => 'reviews', 'title' => 'Customer reviews'));
         ?>
-        
-        <div class="container-fluid">
+
+        <div class="g-commentcount" data-href="[https://plus.google.com/u/0/100763159739584346062]"></div>
+        <div class="container-fluid">            
             <div class="row" style="margin-top: 40px; margin-bottom: 40px">
                 <div class="col-md-1"></div>
-                <div class="col-md-10">
-                    <div class="row">
-                        
-                    </div>
-                    <div class="row">
-                        <div class="panel panel-white post panel-shadow">
-                            <div class="post-heading">
-                                <div class="pull-left image">
-                                    <img src="http://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar" alt="user profile image">
-                                </div>
-                                <div class="pull-left meta">
-                                    <div class="title h5">
-                                        <a href="#"><b>Ryan Haywood</b></a>
-                                        made a post.
-                                    </div>
-                                    <h6 class="text-muted time">1 minute ago</h6>
-                                </div>
-                            </div> 
-                            <div class="post-description"> 
-                                <p>Bootdey is a gallery of free snippets resources templates and utilities for bootstrap css hmtl js framework. Codes for developers and web designers</p>
+                <div class="col-md-10" style="background-color: #f6f6f6; border-radius: 5px;">
+                    <div class="row" style="margin-top: 40px; margin-bottom: 40px">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10">
+                            <div class="row">
+                                <div id="fb-root" style="max-width: 100%"></div>
+                                <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="100%" data-numposts="5"></div>
                             </div>
                         </div>
+                        <div class="col-md-1"></div>
                     </div>
                 </div>
                 <div class="col-md-1"></div>
             </div>
         </div>
-        
+
         <?php
         $this->load->view('website/footer');
         ?>
-        
+
         <script src="<?php echo base_url('bootstrap/js/jquery-3.1.1.min.js'); ?>"></script>
         <script src="<?php echo base_url('bootstrap/js/bootstrap.min.js'); ?>"></script>
+        <script>(function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id))
+                    return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
     </body>
 </html>		

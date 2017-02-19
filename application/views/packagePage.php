@@ -17,7 +17,7 @@
                 <div class="col-md-10">
                     <div class="content_white" style="text-align: left; margin-left: 5px">
                         <h2><?php echo $package->name; ?></h2>
-                        <p><?php echo $package->description; ?></p>
+                        <p style="line-height: 110%; font-size: 130%; text-align: justify"><?php echo $package->description; ?></p>
                     </div>
                 </div>
             </div>
@@ -121,7 +121,7 @@
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="thumbnail">
-                                                            <img alt="Bootstrap Thumbnail First" src="<?php echo $placeInfo['place']->place_image; ?>" />
+                                                            <img alt="Bootstrap Thumbnail First" src="<?php echo base_url($placeInfo['place']->place_image); ?>" />
                                                             <div class="caption">
                                                                 <p style="margin-top: 5px"><a class="btn btn-primary" href="<?php echo base_url('Place/') . $placeInfo['place']->place_id; ?>">View more details</a></p>
                                                             </div>

@@ -13,21 +13,31 @@
         ?>
 
         <div class="container-fluid">
-            <div class="row" style="margin-top: 40px">
+            <div class="row" style="margin-top: 40px; margin-bottom: 40px">
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
                     <div class="row">
                         <?php
                         foreach ($packages->result() as $row) {
                             ?>
-                            <div class="col-md-4">
+                        <div class="col-md-4" style="margin-top: 20px">
                                 <div class="thumbnail">
                                     <div class="caption">
                                         <h3><?php echo $row->name; ?></h3>
                                     </div>
                                     <img alt="Bootstrap Thumbnail Second" src="<?php echo base_url($row->image); ?>" />
                                     <div class="caption">
-                                        <p><?php echo $row->description; ?></p><br>
+                                        <p>
+                                            <?php
+                                            if (strlen($row->description) > 250) {
+                                                $stringCut = substr($row->description, 0, 248);
+                                                $string = substr($stringCut, 0, strrpos($stringCut, ' '));
+                                                echo $string . '..';
+                                            } else {
+                                                echo substr($row->description, 0, 250);
+                                            }
+                                            ?>
+                                        </p><br>
                                         <p><a class="btn btn-primary" href="<?php echo base_url('Package/') . $row->id; ?>">View details</a></p>
                                     </div>
                                 </div>
