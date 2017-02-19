@@ -55,7 +55,7 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['Package/(:num)'] = 'PackageController/index/$1';
-$route['index.php/Packages'] = 'PackagesController/index';
+$route['Packages'] = 'PackagesController/index';
 $route['Place/(:num)'] = 'PlaceController/index/$1';
 $route['Places'] = 'PlacesController/index';
 $route['Activities'] = 'ActivitiesController/index';
