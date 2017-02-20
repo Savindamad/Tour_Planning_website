@@ -18,8 +18,8 @@
                     <div class="col-md-1"></div>
                     <div class="col-md-10">
                         <div class="content_white" style="text-align: left">
-                            <h2>Most popular places in Sri Lanka</h2>
-                            <p>Description</p>
+                            <h2>Most popular tourist attractions</h2>
+                            <p>These are the must see places in Sri Lanka, that you need to add to your itinerary</p>
                         </div>
                         <div class="row">
                             <?php
@@ -41,7 +41,7 @@
                                                 }
                                                 ?>
                                             </p>
-                                            <p style="margin-top: 5px"><a class="btn btn-primary" href="<?php echo base_url('Place/') . $row->id; ?>">View more details</a></p>
+                                            <p style="margin-top: 5px"><a class="btn btn-primary" href="<?php echo base_url('index.php/Place/') . $row->id; ?>">View more details</a></p>
                                         </div>
                                     </div>
                                 </div> 
@@ -50,8 +50,8 @@
                             ?>
                         </div>
                         <div class="content_white" style="text-align: left">
-                            <h2>Other places in Sri Lanka</h2>
-                            <p>Description</p>
+                            <h2>Other tourist attractions</h2>
+                            <p>Sri Lanka is an island blessed with beautiful beaches, ancient heritage sites, wild life and nature.</p>
                         </div>
                         <div class="row">
                             <?php
@@ -73,7 +73,7 @@
                                                 }
                                                 ?>
                                             </p>
-                                            <p style="margin-top: 5px"><a class="btn btn-primary" href="<?php echo base_url('Place/') . $row->id; ?>">View more details</a></p>
+                                            <p style="margin-top: 5px"><a class="btn btn-primary" href="<?php echo base_url('index.php/Place/') . $row->id; ?>">View more details</a></p>
                                         </div>
                                     </div>
                                 </div> 

@@ -15,11 +15,108 @@ function changeNumPlaces(numPlaces) {
                 $('#places').append($(responseText).hide().fadeIn(500));
             }
         });
-    } 
-    else {
-        for(var i = numPlacesprv; i>numPlaces; i--){
+    } else {
+        for (var i = numPlacesprv; i > numPlaces; i--) {
             $('#d_' + i).fadeOut(500);
         }
         document.getElementById("numPlaces1").value = numPlaces;
     }
+}
+
+function submitFunc() {
+    if (validateForm()) {
+        var email = document.getElementById("email").value;
+        var country = document.getElementById("country").value;
+        var mobile = document.getElementById("mobile").value;
+        var numPersons = parseInt(document.getElementById("numPersons").value);
+        var numDays = parseInt(document.getElementById("numDays").value);
+        var numPlaces = parseInt(document.getElementById("numPlaces").value);
+        var message = document.getElementById("message").value;
+
+        var placesInfo = [];
+        if (document.getElementById('optionalFormStatus').checked) {
+            for (var i = 1; i <= numDays; i++) {
+                placesInfo[i - 1] = document.getElementById("p_" + i).value;
+            }
+
+            $.ajax({
+                url: 'TourGuideController/setTourGuideData',
+                type: 'POST',
+                data: {
+                    email: email,
+                    country: country,
+                    mobile: mobile,
+                    numPersons: numPersons,
+                    numDays: numDays,
+                    numPlaces: numPlaces,
+                    message: message,
+                    placeInfo: placesInfo
+                },
+                dataType: 'json',
+                cache: false,
+                success: function (result) {
+
+                }
+            });
+
+            var submitResult = '<div class="container-fluid" id="content" style="margin-top: 20px; margin-bottom: 20px;">\n\
+                                <div class="row">\n\
+                                    <div class="col-md-1">\n\
+                                    </div>\n\
+                                    <div class="col-md-10" style="background-color: #f6f6f6; border-radius: 5px;">\n\
+                                        <div class="row" style="margin-top: 10px;">\n\
+                                            <div class="col-md-12">\n\
+                                                <div class="row" style="margin : 20px">\n\
+                                                <h3>Topic</h3>\n\
+                                                <p>Description</p>\n\
+                                                </div>\n\
+                                            </div>\n\
+                                        </div>\n\
+                                    </div>\n\
+                                </div>\n\
+                            </div>';
+            $('#content').html(submitResult);
+
+        } else {
+            $.ajax({
+                url: 'TourGuideController/setTourGuideData',
+                type: 'POST',
+                data: {
+                    email: email,
+                    country: country,
+                    mobile: mobile,
+                    numPersons: numPersons,
+                    numDays: numDays,
+                    numPlaces: numPlaces,
+                    message: message
+                },
+                dataType: 'json',
+                cache: false,
+                success: function (result) {
+                }
+            });
+
+            var submitResult = '<div class="container-fluid" id="content" style="margin-top: 20px; margin-bottom: 20px;">\n\
+                                <div class="row">\n\
+                                    <div class="col-md-1">\n\
+                                    </div>\n\
+                                    <div class="col-md-10" style="background-color: #f6f6f6; border-radius: 5px;">\n\
+                                        <div class="row" style="margin-top: 10px;">\n\
+                                            <div class="col-md-12">\n\
+                                                <div class="row" style="margin : 20px">\n\
+                                                <h3>Topic</h3>\n\
+                                                <p>Description</p>\n\
+                                                </div>\n\
+                                            </div>\n\
+                                        </div>\n\
+                                    </div>\n\
+                                </div>\n\
+                            </div>';
+            $('#content').html(submitResult);
+        }
+    }
+}
+
+function validateForm() {
+    return true;
 }

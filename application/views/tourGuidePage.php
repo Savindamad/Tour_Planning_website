@@ -11,9 +11,9 @@
 <body>
 
     <?php
-    $this->load->view('website/navbar', Array('current' => 'tourGuide', 'title' => 'Packages'));
+    $this->load->view('website/navbar', Array('current' => 'tourGuide', 'title' => 'Transport Reservation'));
     ?>
-    <div class="container-fluid" style="margin-top: 40px; margin-bottom: 40px;">
+    <div class="container-fluid" style="margin-top: 40px; margin-bottom: 40px;" id="content">
         <div class="col-md-1"></div>
         <div class="col-md-10" style="background-color: #f6f6f6; border-radius: 5px;">
             <div class="row" style="margin-top: 30px;">      
@@ -65,8 +65,8 @@
                                             <input type="hidden" id="numPlaces1" value="1"/>
                                         </div>
                                         <div class="form-group">
-                                            <label for="comment">Text</label>
-                                            <textarea class="form-control" id="comment" rows="4"></textarea>
+                                            <label for="message">Text</label>
+                                            <textarea class="form-control" id="message" rows="4"></textarea>
                                         </div>
                                     </form>
                                 </div>
@@ -176,11 +176,17 @@
                                 <div class="col-md-2"></div>
                                 <div class="col-md-10">
                                     <p>Description</p>
-                                    <form role="form" style="margin-top: 20px;">
-                                        <div class="form-group">
-                                            <input type="submit" class="btn btn-primary form-control" id="email" />
+                                    <div class="form-check" style="margin-top: 10px;">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" id="optionalFormStatus">
+                                            If you fill option form
+                                        </label>
+                                    </div>
+                                    <div style="margin-top: 10px; margin-bottom: 40px">
+                                        <div class="row">
+                                            <button class="btn btn-lg btn-primary" onclick="submitFunc()">Submit your response</button>
                                         </div>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>

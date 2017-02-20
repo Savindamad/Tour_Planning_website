@@ -103,4 +103,20 @@ class PackageController extends CI_Controller {
         echo json_encode($mapPlaces);
     }
 
+    public function getAllPlacesId() {
+        $id = $this->input->post('packageId');
+        $this->load->model('PackageModel');
+        $places = $this->PackageModel->getPlaces($id);
+
+        $placesArray = array();
+        foreach ($places->result() as $row) {
+            $placesArray[] = $row->place_id;
+        }
+        echo json_encode($placesArray);
+    }
+
+    public function setPackageData() {
+        
+    }
+
 }

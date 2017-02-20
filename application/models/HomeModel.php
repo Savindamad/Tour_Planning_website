@@ -44,8 +44,9 @@ class HomeModel extends CI_Model {
     public function getCompanyInfo() {
         $this->db->select('*');
         $this->db->from('company_info');
+        $this->db->where('id',1);
         $result = $this->db->get();
-        return $result->result();
+        return $result->row();
     }
 
 }

@@ -9,7 +9,7 @@
     </head>
     <body>
         <?php
-        $this->load->view('website/navbar', Array('current' => 'place', 'title' => 'Places to visit'));
+        $this->load->view('website/navbar', Array('current' => 'place', 'title' => 'Place'));
         ?>
         
         <div class="container-fluid" style="margin-top: 40px; margin-bottom: 20px;">

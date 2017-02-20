@@ -16,7 +16,7 @@ class TourGuideController extends CI_Controller {
         $places = $this->TourGuideModel->getAllPlaces();
 
         for ($i = $placeNum + 1; $i <= $placeNumNw; $i++) {
-            echo '<div class="col-md-6" id="d_'.$i.'">
+            echo '<div class="col-md-6" id="d_' . $i . '">
                                 <div class="row" style="margin-top : 20px">
                                     <div class="col-md-1"></div>
                                     <div class="col-md-11">
@@ -47,6 +47,10 @@ class TourGuideController extends CI_Controller {
                                 </div>
                             </div>    ';
         }
+    }
+
+    public function setTourGuideData() {
+        
     }
 
 }

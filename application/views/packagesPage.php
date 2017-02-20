@@ -38,7 +38,7 @@
                                             }
                                             ?>
                                         </p><br>
-                                        <p><a class="btn btn-primary" href="<?php echo base_url('Package/') . $row->id; ?>">View details</a></p>
+                                        <p><a class="btn btn-primary" href="<?php echo base_url('index.php/Package/') . $row->id; ?>">View details</a></p>
                                     </div>
                                 </div>
                             </div>

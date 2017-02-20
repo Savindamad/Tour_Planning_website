@@ -9,10 +9,10 @@
     </head>
     <body>
         <?php
-        $this->load->view('website/navbar', Array('current' => 'customPackage', 'title' => 'Packages'));
+        $this->load->view('website/navbar', Array('current' => 'customPackage', 'title' => 'Plan your tour'));
         ?>
 
-        <div class="container-fluid" style="margin-top: 40px; margin-bottom: 20px;">
+        <div class="container-fluid" style="margin-top: 40px; margin-bottom: 20px;" id="content1">
             <div class="col-md-1"></div>
             <div class="col-md-10" style="background-color: #f6f6f6; border-radius: 5px;">
                 <div class="row" style="margin-top: 30px;">      
@@ -22,8 +22,8 @@
                                 <div class="row">
                                     <div class="col-md-1"></div>
                                     <div class="col-md-10">
-                                        <h3>Basic infomation</h3>
-                                        <p>Descriprion</p><br>
+                                        <h3><b>Basic details</b></h3>
+                                        <p><b>Fill in the basic contact details and tour details below</b></p><br>
                                     </div>
                                 </div>
                             </div>
@@ -33,7 +33,7 @@
                                 <div class="row">
                                     <div class="col-md-1"></div>
                                     <div class="col-md-10">
-                                        <form role="form">
+                                        <form role="form" id="basicBootstrapForm">
                                             <div class="form-group">
                                                 <label for="email">
                                                     Email address
@@ -50,13 +50,13 @@
                                                 <label for="mobile">
                                                     Phone number
                                                 </label>
-                                                <input type="email" class="form-control" id="mobile" />
+                                                <input type="text" class="form-control" id="mobile" />
                                             </div>
                                             <div class="form-group">
-                                                <label for="hotel">
-                                                    Hotel
+                                                <label for="hotel_star">
+                                                    Hotel rating preference
                                                 </label>
-                                                <select class="form-control" id="hotel" onchange="getHotelsStar(this.value)">
+                                                <select class="form-control" id="hotel_star" onchange="getHotelsStar(this.value)">
                                                     <option value="TWO">Two star</option>
                                                     <option value="THREE">Three star</option>
                                                     <option value="FOUR">Four star</option>
@@ -97,63 +97,36 @@
                                                 <input type="number" class="form-control" id="double" />
                                             </div>
                                             <div class="form-group">
-                                                <label for="triple">
+                                                <label for="trible">
                                                     Number of triple rooms
                                                 </label>
-                                                <input type="number" class="form-control" id="triple" />
+                                                <input type="number" class="form-control" id="trible" />
                                             </div>
                                             <div class="form-group">
-                                                <label for="triple">
-                                                    Number of triple rooms
-                                                </label>
-                                                <input type="number" class="form-control" id="triple" />
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="comment">Text</label>
-                                                <textarea class="form-control" id="comment" rows="5"></textarea>
+                                                <label for="comment">Message</label>
+                                                <textarea class="form-control" id="message" rows="9"></textarea>
                                             </div>
                                         </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="col-md-10">
-                                        <p>Descriprion</p><br>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row" style="margin-top: 20px;margin-bottom: 40px">
-                            <div class="col-md-6">
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="col-md-10">
-                                        <form role="form">
-                                            <div class="form-group">
-                                                <input type="submit" class="btn btn-primary form-control" />
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="row" style="margin : 30">
+                            <p><b>Use the message box above, to send us a message with your basic preferences about the tour. Tell us the places you like to visit and your accommodations plans. Our agent will contact you through e-mail to assist you plan the tour, the way you wish.</b></p><br>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container-fluid" style="background-color: #f6f6f6; margin-top: 40px; margin-bottom: 20px;">
+        <div class="container-fluid" style="background-color: #f6f6f6; margin-top: 40px; margin-bottom: 20px;" id="content2">
             <div style="margin-top: 30px;">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-1"></div>
                             <div class="col-md-11">
-                                <h3>Place and hotel information</h3>
-                                <p>Descriprion</p><br>    
+                                <h3><b>Places and accommodation details</b></h3>
+                                <p><b>Filling this form is optional. You can add places you like to visit with the accommodation preferences, so we can plan your tour, the exact way you dream of. Instead, you can fill the message box above as well, with the tour details.</b></p><br>    
                             </div>
                         </div>
                     </div>
@@ -163,7 +136,7 @@
                 <?php
                 for ($i = 1; $i < 3; $i++) {
                     ?>
-                <div class="col-md-6" style="margin-top: 20px; margin-bottom: 20px" id="d_<?php echo $i;?>">
+                    <div class="col-md-6" style="margin-top: 20px; margin-bottom: 20px" id="d_<?php echo $i; ?>">
                         <div class="row" >
                             <div class="col-md-2"></div>
                             <div class="col-md-10" style="background-color: #ffffff; border-radius: 5px;">
@@ -220,32 +193,31 @@
                 }
                 ?>
             </div>
-            <div style="margin-top: 30px;">
-                <div class="row">
+            <div>
+                <div class="row" style="margin-top: 40px;">
                     <div class="col-md-12">
-                        <div class="row">
+                        <div class="row" style="margin-top: 30px;">
                             <div class="col-md-1"></div>
                             <div class="col-md-11">
-                                <p>Descriprion</p><br>    
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input" id="optionalFormStatus">
+                                        If you fill option form
+                                    </label>
+                                </div>
+                                <p><b>Submit the filled form. Our agent will contact you soon through e-mail, with the tour details.</b></p><br>    
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div style="margin-top: 30px; margin-bottom: 40px">
+            <div style="margin-top: 15px; margin-bottom: 40px">
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col-md-2"></div>
-                            <div class="col-md-10">
-                                <form role="form">
-                                    <div class="form-group">
-                                        <input type="submit" class="btn btn-primary form-control" />
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-8">
+                        <button class="btn btn-lg btn-primary" onclick="submitFunc()">Submit your response</button>
                     </div>
+                    <div class="col-md-1"></div>
                 </div>
             </div>
         </div>
