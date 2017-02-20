@@ -133,7 +133,7 @@
                                                             <div class="thumbnail">
                                                                 <img alt="Bootstrap Thumbnail First" src="<?php echo base_url($placeInfo['place']->place_image); ?>" />
                                                                 <div class="caption">
-                                                                    <p style="margin-top: 5px"><a class="btn btn-primary" style="width :100%" href="<?php echo base_url('Place/') . $placeInfo['place']->place_id; ?>">View place details</a></p>
+                                                                    <p style="margin-top: 5px"><a class="btn btn-primary" style="width :100%" href="<?php echo base_url('index.php/Place/') . $placeInfo['place']->place_id; ?>">View place details</a></p>
                                                                 </div>
                                                             </div>
                                                         </div>
