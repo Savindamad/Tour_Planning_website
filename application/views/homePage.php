@@ -16,50 +16,51 @@
         <link rel="stylesheet" href="<?php echo base_url('public/navbar/css/style.css'); ?>"> <!-- Resource style -->
     </head>
     <body>
-
         <?php
         $this->load->view('website/navbarNw');
         ?>
 
-        <header id="myCarousel" class="carousel slide">
+        <main class="cd-main-content">
+            <header id="myCarousel" class="carousel slide">
 
-            <!-- Wrapper for Slides -->
-            <div class="carousel-inner">
-                <?php
-                $i = 0;
-                foreach ($images->result() as $row) {
-                    if ($i == 0) {
-                        $i = 1;
-                        ?>
-                        <div class="item active">
-                            <?php
-                        } else {
+                <!-- Wrapper for Slides -->
+                <div class="carousel-inner">
+                    <?php
+                    $i = 0;
+                    foreach ($images->result() as $row) {
+                        if ($i == 0) {
+                            $i = 1;
                             ?>
-                            <div class="item">
+                            <div class="item active">
                                 <?php
-                            }
-                            ?>
-                            <!-- Set the first background image using inline CSS below. -->
-                            <div class="fill" style="background-image:url(<?php echo $row->path; ?>);"></div>
-                            <div class="carousel-caption">
-                                <h2></h2>
+                            } else {
+                                ?>
+                                <div class="item">
+                                    <?php
+                                }
+                                ?>
+                                <!-- Set the first background image using inline CSS below. -->
+                                <div class="fill" style="background-image:url(<?php echo $row->path; ?>);"></div>
+                                <div class="carousel-caption">
+                                    <h2></h2>
+                                </div>
                             </div>
-                        </div>
-                        <?php
-                    }
-                    ?>
+                            <?php
+                        }
+                        ?>
 
-                </div>
+                    </div>
 
-                <!-- Controls -->
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                    <span class="icon-prev"></span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                    <span class="icon-next"></span>
-                </a>
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="icon-prev"></span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="icon-next"></span>
+                    </a>
 
-        </header>
+            </header>
+        </main>
 
         <div class="main">
             <div class="content_white">
