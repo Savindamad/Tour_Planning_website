@@ -19,7 +19,7 @@
         <?php
         $this->load->view('website/navbarNw');
         ?>
-        <header id="myCarousel" class="carousel slide" style="margin-top: 50px">
+        <header id="myCarousel" class="carousel slide" style="margin-top: 100px">
 
             <!-- Wrapper for Slides -->
             <div class="carousel-inner">
