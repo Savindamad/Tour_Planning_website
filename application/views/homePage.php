@@ -19,47 +19,46 @@
         <?php
         $this->load->view('website/navbarNw');
         ?>
+        <header id="myCarousel" class="carousel slide" style="margin-top: 50px">
 
-        <div class="main">
-            <header id="myCarousel" class="carousel slide">
-
-                <!-- Wrapper for Slides -->
-                <div class="carousel-inner">
-                    <?php
-                    $i = 0;
-                    foreach ($images->result() as $row) {
-                        if ($i == 0) {
-                            $i = 1;
-                            ?>
-                            <div class="item active">
-                                <?php
-                            } else {
-                                ?>
-                                <div class="item">
-                                    <?php
-                                }
-                                ?>
-                                <!-- Set the first background image using inline CSS below. -->
-                                <div class="fill" style="background-image:url(<?php echo $row->path; ?>);"></div>
-                                <div class="carousel-caption">
-                                    <h2></h2>
-                                </div>
-                            </div>
-                            <?php
-                        }
+            <!-- Wrapper for Slides -->
+            <div class="carousel-inner">
+                <?php
+                $i = 0;
+                foreach ($images->result() as $row) {
+                    if ($i == 0) {
+                        $i = 1;
                         ?>
+                        <div class="item active">
+                            <?php
+                        } else {
+                            ?>
+                            <div class="item">
+                                <?php
+                            }
+                            ?>
+                            <!-- Set the first background image using inline CSS below. -->
+                            <div class="fill" style="background-image:url(<?php echo $row->path; ?>);"></div>
+                            <div class="carousel-caption">
+                                <h2></h2>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                    ?>
 
-                    </div>
+                </div>
 
-                    <!-- Controls -->
-                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                        <span class="icon-prev"></span>
-                    </a>
-                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                        <span class="icon-next"></span>
-                    </a>
+                <!-- Controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="icon-prev"></span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="icon-next"></span>
+                </a>
 
-            </header>
+        </header>
+        <div class="main">
             <div class="content_white">
                 <h2>Tour Packages</h2>
                 <p style="line-height: 90%; font-size: 130%;">Pick a tour package that suits your preferences. We have carefully added the most attractive places to the list.</p>
