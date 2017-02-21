@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#">
-                <img src="<?php echo base_url('public/images/logo1.png'); ?>" alt="">
+                <img style="width: 200px" src="<?php echo base_url('public/images/logo1.png'); ?>" alt="">
             </a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
