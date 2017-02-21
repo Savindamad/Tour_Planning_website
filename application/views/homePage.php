@@ -10,41 +10,14 @@
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Lato:100,200,300,400,600,700,900' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
-
-        <link rel="stylesheet" href="<?php echo base_url('public/navbar/css/reset.css'); ?>"> <!-- CSS reset -->
-        <link rel="stylesheet" href="<?php echo base_url('public/navbar/css/style.css'); ?>"> <!-- Resource style -->
     </head>
     <body>
+
         <?php
-        $this->load->view('website/navbarNw');
+        $this->load->view('website/navbar', Array('current' => 'home', 'title' => 'Home page'));
         ?>
-        <header id="myCarousel" class="carousel slide" style="margin-top: 100px">
-            <div class="cd-logo"><a href="#0"><img src="img/cd-logo.svg" alt="Logo"></a></div>
 
-            <nav class="cd-main-nav-wrapper">
-                <ul class="cd-main-nav">
-                    <li><a href="#0">About</a></li>
-                    <li><a href="#0">Projects</a></li>
-                    <li><a href="#0">Blog</a></li>
-                    <li><a href="#0">Contact</a></li>
-                    <li>
-                        <a href="#0" class="cd-subnav-trigger"><span>Categories</span></a>
-
-                        <ul>
-                            <li class="go-back"><a href="#0">Menu</a></li>
-                            <li><a href="#0">Category 1</a></li>
-                            <li><a href="#0">Category 2</a></li>
-                            <li><a href="#0">Category 3</a></li>
-                            <li><a href="#0">Category 4</a></li>
-                            <li><a href="#0">Category 5</a></li>
-                            <li><a href="#0" class="placeholder">Placeholder</a></li>
-                        </ul>
-                    </li>
-                </ul> <!-- .cd-main-nav -->
-            </nav> <!-- .cd-main-nav-wrapper -->
-
-            <a href="#0" class="cd-nav-trigger">Menu<span></span></a>
+        <header id="myCarousel" class="carousel slide">
 
             <!-- Wrapper for Slides -->
             <div class="carousel-inner">
@@ -83,6 +56,7 @@
                 </a>
 
         </header>
+
         <div class="main">
             <div class="content_white">
                 <h2>Tour Packages</h2>
@@ -251,7 +225,5 @@
         <script type="text/javascript" src="<?php echo base_url('public/js/home_page.js'); ?>"></script>
         <script src="http://maps.google.com/maps/api/js?key=AIzaSyBiLOyslTC14QS8xl906N-6AvpzOn7BEgg" type="text/javascript"></script>
         <script type="text/javascript" src="<?php echo base_url('public/js/map_home_page.js'); ?>"></script>
-        <script src="<?php echo base_url('public/navbar/js/modernizr.js'); ?>"></script> <!-- Modernizr -->
-        <script src="<?php echo base_url('public/navbar/js/main.js'); ?>"></script>
     </body>
 </html>		
