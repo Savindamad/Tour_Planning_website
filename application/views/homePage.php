@@ -18,7 +18,7 @@
         $this->load->view('website/navbarNw');
         ?>
 
-        <header id="myCarousel" class="carousel slide">
+        <header id="myCarousel" class="carousel slide" style="margin-top:-20px">
 
             <!-- Wrapper for Slides -->
             <div class="carousel-inner">
@@ -57,7 +57,6 @@
                 </a>
 
         </header>
-
         <div class="main">
             <div class="content_white">
                 <h2>Tour Packages</h2>

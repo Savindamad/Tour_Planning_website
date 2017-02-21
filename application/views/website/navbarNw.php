@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#">
-                <img src="http://placehold.it/150x50&text=Logo" alt="">
+                <img src="<?php echo base_url('public/images/logo1.png'); ?>" alt="">
             </a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
