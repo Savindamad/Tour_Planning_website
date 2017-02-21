@@ -10,11 +10,12 @@
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Lato:100,200,300,400,600,700,900' rel='stylesheet' type='text/css'>
+        <link href="<?php echo base_url('public/css/logo-nav.css'); ?>" rel="stylesheet">
     </head>
     <body>
 
         <?php
-        $this->load->view('website/navbar', Array('current' => 'home', 'title' => 'Home page'));
+        $this->load->view('website/navbarNw');
         ?>
 
         <header id="myCarousel" class="carousel slide">
