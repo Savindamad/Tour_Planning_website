@@ -24,7 +24,7 @@ function getHotelsPackage(packageId, star) {
     });
 }
 
-function getHotelsPlace(placeId, star) {
+function getHotelsPlace(id,placeId, star) {
     $.ajax({
         url: '../PackageController/getHotelPlaceInfo',
         type: 'POST',
@@ -38,8 +38,8 @@ function getHotelsPlace(placeId, star) {
             var hotels = result[0].hotels;
             var rooms = result[0].rooms;
 
-            $('#h_' + placeId).html(hotels);
-            $('#r_' + placeId).html(rooms);
+            $('#h_' + id).html(hotels);
+            $('#r_' + id).html(rooms);
         }
     });
 }

@@ -158,7 +158,7 @@
                                                             <label for="s_<?php echo $placeInfo['place']->id; ?>">
                                                                 Hotel rating preference
                                                             </label>
-                                                            <select class="form-control" id="s_<?php echo $placeInfo['place']->id; ?>" onchange="getHotelsPlace(<?php echo $placeInfo['place']->id; ?>, this.value)">
+                                                            <select class="form-control" id="s_<?php echo $placeInfo['place']->id; ?>" onchange="getHotelsPlace(<?php echo $placeInfo['place']->id; ?>,<?php echo $placeInfo['place']->place_id; ?>, this.value)">
                                                                 <option value="TWO">Two Star</option>
                                                                 <option value="THREE">Three Star</option>
                                                                 <option value="FOUR">Four Star</option>
