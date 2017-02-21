@@ -202,16 +202,16 @@
                                 <div class="form-check">
                                     <label class="form-check-label">
                                         <input type="checkbox" class="form-check-input" id="optionalFormStatus">
-                                        If you fill option form
+                                        Check If you fill the option form
                                     </label>
                                 </div>
-                                <p><b>Submit the filled form. Our agent will contact you soon through e-mail, with the tour details.</b></p><br>    
+                                <p><b><br>Submit the filled form. Our agent will contact you soon through e-mail, with the tour details.</b></p><br>    
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div style="margin-top: 15px; margin-bottom: 40px">
+            <div style="margin-top: 10px; margin-bottom: 40px">
                 <div class="row">
                     <div class="col-md-1"></div>
                     <div class="col-md-8">
