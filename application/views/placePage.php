@@ -6,10 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="<?php echo base_url('public/navbar/css/reset.css'); ?>"> <!-- CSS reset -->
+        <link rel="stylesheet" href="<?php echo base_url('public/navbar/css/style.css'); ?>"> <!-- Resource style -->
     </head>
     <body>
         <?php
-        $this->load->view('website/navbar', Array('current' => 'place', 'title' => 'Place'));
+        $this->load->view('website/navbarNw');
         ?>
         
         <div class="container-fluid" style="margin-top: 40px; margin-bottom: 20px;">
@@ -155,5 +157,7 @@
         <script src="http://maps.google.com/maps/api/js?key=AIzaSyBiLOyslTC14QS8xl906N-6AvpzOn7BEgg" type="text/javascript"></script>
         <script type="text/javascript" src="<?php echo base_url('public/js/map_place.js'); ?>"></script>
         <script type="text/javascript" src="<?php echo base_url('public/js/place_page.js'); ?>"></script>
+        <script src="<?php echo base_url('public/navbar/js/modernizr.js'); ?>"></script> <!-- Modernizr -->
+        <script src="<?php echo base_url('public/navbar/js/main.js'); ?>"></script>
     </body>
 </html>		
