@@ -175,12 +175,12 @@
                             <div class="row">
                                 <div class="col-md-2"></div>
                                 <div class="col-md-10">
-                                    <p>Description</p>
                                     <div class="form-check" style="margin-top: 10px;">
                                         <label class="form-check-label">
                                             <input type="checkbox" class="form-check-input" id="optionalFormStatus">
                                             If you fill option form
                                         </label>
+                                        <p><br>Submit the filled form. Our agent will contact you soon through e-mail, with the tour details.</b></p>
                                     </div>
                                     <div style="margin-top: 10px; margin-bottom: 40px">
                                         <div class="row">
