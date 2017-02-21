@@ -24,7 +24,7 @@
                                 <div class="col-md-1"></div>
                                 <div class="col-md-11">
                                     <div>
-                                        <h3>Basic information</h3>
+                                        <h3>Basic Details</h3>
                                     </div>
                                     <form role="form">
                                         <div class="form-group">
@@ -65,7 +65,7 @@
                                             <input type="hidden" id="numPlaces1" value="1"/>
                                         </div>
                                         <div class="form-group">
-                                            <label for="message">Text</label>
+                                            <label for="message">Message</label>
                                             <textarea class="form-control" id="message" rows="4"></textarea>
                                         </div>
                                     </form>
@@ -103,7 +103,7 @@
                         <div class="col-md-1"></div>
                         <div class="col-md-10">
                             <h4><b>Airport</b></h4>
-                            <p>Description</p>
+                            <p>You will be picked up at the airport on your arrival date.</p>
                         </div>
                         <div class="col-md-1"></div>
                     </div>
@@ -162,7 +162,7 @@
                         <div class="col-md-1"></div>
                         <div class="col-md-10">
                             <h4><b>Airport</b></h4>
-                            <p>Description</p>
+                            <p>You will be dropped at the airport on your departure date.</p>
                         </div>
                         <div class="col-md-1"></div>
                     </div>

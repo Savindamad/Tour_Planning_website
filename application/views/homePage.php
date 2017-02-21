@@ -10,11 +10,18 @@
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Lato:100,200,300,400,600,700,900' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="<?php echo base_url('public/navbar/css/reset.css'); ?>"> <!-- CSS reset -->
+        <link rel="stylesheet" href="<?php echo base_url('public/navbar/css/style.css'); ?>"> <!-- Resource style -->
     </head>
     <body>
 
         <?php
         $this->load->view('website/navbar', Array('current' => 'home', 'title' => 'Home page'));
+        ?>
+        <?php
+        $this->load->view('website/navbarNw');
         ?>
 
         <header id="myCarousel" class="carousel slide">
@@ -225,5 +232,8 @@
         <script type="text/javascript" src="<?php echo base_url('public/js/home_page.js'); ?>"></script>
         <script src="http://maps.google.com/maps/api/js?key=AIzaSyBiLOyslTC14QS8xl906N-6AvpzOn7BEgg" type="text/javascript"></script>
         <script type="text/javascript" src="<?php echo base_url('public/js/map_home_page.js'); ?>"></script>
+        <script src="<?php echo base_url('public/navbar/js/modernizr.js'); ?>"></script> <!-- Modernizr -->
+        <script src="<?php echo base_url('public/navbar/js/jquery-2.1.1.js'); ?>"></script>
+        <script src="<?php echo base_url('public/navbar/js/main.js'); ?>"></script>
     </body>
 </html>		

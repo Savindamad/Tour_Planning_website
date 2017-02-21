@@ -202,8 +202,8 @@ function submitFunc() {
                                         <div class="row" style="margin-top: 10px;">\n\
                                             <div class="col-md-12">\n\
                                                 <div class="row" style="margin : 20px">\n\
-                                                <h3>Topic</h3>\n\
-                                                <p>Description</p>\n\
+                                                <h3>Response successfully submitted</h3>\n\
+                                                <p>Your response had been submitted. Our agent will contact you through email with further details. We will come up with the best tour plan for you, considering all youur preferences, at the best rate. Thank you for choosing Walk Lanka Travels as your tour partner. Have a nice day!</p>\n\
                                                 </div>\n\
                                             </div>\n\
                                         </div>\n\
@@ -242,8 +242,8 @@ function submitFunc() {
                                         <div class="row" style="margin-top: 10px;">\n\
                                             <div class="col-md-12">\n\
                                                 <div class="row" style="margin : 20px">\n\
-                                                <h3>Topic</h3>\n\
-                                                <p>Description</p>\n\
+                                                <h3>Response successfully submitted</h3>\n\
+                                                <p>Your response had been submitted. Our agent will contact you through email with further details. We will come up with the best tour plan for you, considering all youur preferences, at the best rate. Thank you for choosing Walk Lanka Travels as your tour partner. Have a nice day!</p>\n\
                                                 </div>\n\
                                             </div>\n\
                                         </div>\n\
