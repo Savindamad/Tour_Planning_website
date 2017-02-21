@@ -20,7 +20,7 @@
         $this->load->view('website/navbarNw');
         ?>
 
-        <main class="cd-main-content">
+        <div class="main">
             <header id="myCarousel" class="carousel slide">
 
                 <!-- Wrapper for Slides -->
@@ -60,9 +60,6 @@
                     </a>
 
             </header>
-        </main>
-
-        <div class="main">
             <div class="content_white">
                 <h2>Tour Packages</h2>
                 <p style="line-height: 90%; font-size: 130%;">Pick a tour package that suits your preferences. We have carefully added the most attractive places to the list.</p>
