@@ -15,7 +15,7 @@
     <body>
 
         <?php
-        $this->load->view('website/navbarNw');
+        $this->load->view('website/navbarNw' ,Array('current' => 'home', 'title' => ''));
         ?>
 
         <header id="myCarousel" class="carousel slide" style="margin-top:-20px">

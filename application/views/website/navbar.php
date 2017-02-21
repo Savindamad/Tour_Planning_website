@@ -25,7 +25,7 @@
 <?php
 if (isset($current) && $current != 'home') {
     ?>
-    <div class="about">
+    <div class="about" >
         <div class="container">
             <section class="title-section">
                 <div class="row">

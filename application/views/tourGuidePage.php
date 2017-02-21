@@ -11,7 +11,7 @@
 <body>
 
     <?php
-    $this->load->view('website/navbar', Array('current' => 'tourGuide', 'title' => 'Transport Reservation'));
+    $this->load->view('website/navbarNw', Array('current' => 'tourGuide', 'title' => 'Transport Reservation'));
     ?>
     <div class="container-fluid" style="margin-top: 40px; margin-bottom: 40px;" id="content">
         <div class="col-md-1"></div>

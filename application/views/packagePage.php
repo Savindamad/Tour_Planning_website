@@ -8,7 +8,7 @@
     </head>
     <body>
         <?php
-        $this->load->view('website/navbar', Array('current' => 'package', 'title' => 'Package'));
+        $this->load->view('website/navbarNw', Array('current' => 'package', 'title' => 'Package'));
         ?>
 
         <div class="container-fluid" id="content" style="margin-top: 20px; margin-bottom: 20px;">

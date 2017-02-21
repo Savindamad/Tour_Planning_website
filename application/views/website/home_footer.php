@@ -2,8 +2,16 @@
     <div class="footer_top">
         <div class="container">
             <div class="footer_head">
-                <h2><?php if (isset($name)) echo $name; ?></h2>
-                <p style="line-height: 90%; font-size: 130%;"><small><?php if (isset($description)) echo $description; ?></small></p>
+                <div class="row">
+                    <div class="col-md-2">
+                        <img style="width: 250px; margin-top: 35px; " src="<?php echo base_url('public/images/logo1.png'); ?>" alt="">
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-9">
+                        <h2><?php if (isset($name)) echo $name; ?></h2>
+                        <p style="line-height: 90%; font-size: 120%; text-align: justify"><small><?php if (isset($description)) echo $description; ?></small></p>
+                    </div>
+                </div>
             </div>
             <div class="row footer_grid">
                 <div class="col-md-9"> 

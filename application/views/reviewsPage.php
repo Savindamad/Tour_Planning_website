@@ -9,8 +9,9 @@
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
     </head>
     <body>
+
         <?php
-        $this->load->view('website/navbar', Array('current' => 'reviews', 'title' => 'Customer reviews'));
+        $this->load->view('website/navbarNw', Array('current' => 'reviews', 'title' => 'Customer reviews'));
         ?>
 
         <div class="g-commentcount" data-href="[https://plus.google.com/u/0/100763159739584346062]"></div>
