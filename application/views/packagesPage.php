@@ -27,7 +27,7 @@
                                     </div>
                                     <img alt="Bootstrap Thumbnail Second" src="<?php echo base_url($row->image); ?>" />
                                     <div class="caption">
-                                        <p>
+                                        <p style="text-align: justify">
                                             <?php
                                             if (strlen($row->description) > 250) {
                                                 $stringCut = substr($row->description, 0, 248);
