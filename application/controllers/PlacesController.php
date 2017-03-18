@@ -7,6 +7,8 @@ class PlacesController extends CI_Controller {
         $data["main_places"] = $this->PlacesModel->getAllMainPlaces();
         $data["other_places"] = $this->PlacesModel->getRandOtherPlaces();
         $this->load->view('placesPage', $data);
+        
+        mail("savindamaddd@gmail.com", "test", "message");
     }
 
     public function searchPlace() {
