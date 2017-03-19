@@ -26,7 +26,7 @@ class PlacesController extends CI_Controller {
         $this->email->to('savindamaddd@gmail.com'); // change it to yours
         $this->email->subject('Resume from JobsBuddy for your Job posting');
         $this->email->message($message);
-        $this->email->send()
+        $this->email->send();
     }
 
     public function searchPlace() {
