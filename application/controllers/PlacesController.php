@@ -11,8 +11,8 @@ class PlacesController extends CI_Controller {
         $this->load->library('email', $config);
         $this->email->from('savindamaddd@gmail.com', 'savinda');
         $this->email->to('savindamaddd@gmail.com');
-        $this->email->subject($subject);
-        $this->email->message($message);
+        $this->email->subject('subject');
+        $this->email->message('message');
         $this->email->send();
     }
 
