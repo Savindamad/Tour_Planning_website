@@ -7,8 +7,18 @@ class PlacesController extends CI_Controller {
         $data["main_places"] = $this->PlacesModel->getAllMainPlaces();
         $data["other_places"] = $this->PlacesModel->getRandOtherPlaces();
         $this->load->view('placesPage', $data);
-        
-        mail("savindamaddd@gmail.com", "test", "message","From:savinda@walklanka.azurewebsites.net");
+
+        $this->load->library('email');
+
+        $this->email->from('your@example.com', 'Your Name');
+        $this->email->to('savindamaddd@gmail.com');
+        //$this->email->cc('another@another-example.com');
+        //$this->email->bcc('them@their-example.com');
+
+        $this->email->subject('Email Test');
+        $this->email->message('Testing the email class.');
+
+        $this->email->send();
     }
 
     public function searchPlace() {
