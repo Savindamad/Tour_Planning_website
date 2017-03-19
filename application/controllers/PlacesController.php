@@ -8,17 +8,25 @@ class PlacesController extends CI_Controller {
         $data["other_places"] = $this->PlacesModel->getRandOtherPlaces();
         $this->load->view('placesPage', $data);
 
-        $this->load->library('email');
+        $config = Array(
+            'protocol' => 'smtp',
+            'smtp_host' => 'ssl://smtp.googlemail.com',
+            'smtp_port' => 465,
+            'smtp_user' => 'madsavidocs@gmail.com', // change it to yours
+            'smtp_pass' => 'panzor<123', // change it to yours
+            'mailtype' => 'html',
+            'charset' => 'iso-8859-1',
+            'wordwrap' => TRUE
+        );
 
-        $this->email->from('your@example.com', 'Your Name');
-        $this->email->to('savindamaddd@gmail.com');
-        //$this->email->cc('another@another-example.com');
-        //$this->email->bcc('them@their-example.com');
-
-        $this->email->subject('Email Test');
-        $this->email->message('Testing the email class.');
-
-        $this->email->send();
+        $message = '';
+        $this->load->library('email', $config);
+        $this->email->set_newline("\r\n");
+        $this->email->from('madsavidocs@gmail.com'); // change it to yours
+        $this->email->to('savindamaddd@gmail.com'); // change it to yours
+        $this->email->subject('Resume from JobsBuddy for your Job posting');
+        $this->email->message($message);
+        $this->email->send()
     }
 
     public function searchPlace() {
