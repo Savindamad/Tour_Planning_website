@@ -13,7 +13,13 @@ class PlacesController extends CI_Controller {
         $this->email->to('savindamaddd@gmail.com');
         $this->email->subject('subject');
         $this->email->message('message');
-        $this->email->send();
+        
+        if($this->email->send()){
+            
+        }
+        else{
+            show_error($this->email->print_debugger());
+        }
     }
 
     public function searchPlace() {
