@@ -8,7 +8,7 @@ class PlacesController extends CI_Controller {
         $data["other_places"] = $this->PlacesModel->getRandOtherPlaces();
         $this->load->view('placesPage', $data);
         
-        mail("savindamaddd@gmail.com", "test", "message");
+        mail("savindamaddd@gmail.com", "test", "message","From:madsavidocs@gmail.com");
     }
 
     public function searchPlace() {
