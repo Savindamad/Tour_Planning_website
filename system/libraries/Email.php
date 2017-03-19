@@ -140,7 +140,7 @@ class CI_Email {
 	 *
 	 * @var	string	'text' or 'html'
 	 */
-	public $mailtype	= 'text';
+	public $mailtype	= 'html';
 
 	/**
 	 * Character set (default: utf-8)
